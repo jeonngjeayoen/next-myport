@@ -1,0 +1,47 @@
+@use '@styles/common' as *;
+
+.header {
+    display: flex;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+    position: fixed;
+    padding: 0 40px;
+    background: #ffffff31;
+
+    h1 {
+        position: absolute;
+        left: 20%;
+
+        a {
+            display: inline-block;
+        }
+
+        .h1_logo {
+            width: 127px;
+            height: 90px;
+            background: url(/images/logo.png) center center / contain no-repeat;
+            display: inline-block;
+        }
+    }
+
+    nav {
+        width: calc(100% - 80px);
+
+        ul {
+            width: 100%;
+            @include flexCenter(space-between);
+
+            a {
+                @include flexCenter(center);
+                gap: 4px;
+                color: $color-white;
+                text-transform: uppercase;
+
+                svg {
+                    width: 14px;
+                }
+            }
+        }
+    }
+}

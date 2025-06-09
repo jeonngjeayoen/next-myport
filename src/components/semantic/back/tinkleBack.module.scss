@@ -1,0 +1,68 @@
+.ico_star {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    animation: small 1.2s infinite;
+
+    &1 {
+        top: 60%;
+        left: 10%;
+        animation: small 1s infinite;
+    }
+
+    &2 {
+        top: 10%;
+        left: 20%;
+        animation: small 2.3s infinite;
+    }
+
+    &3 {
+        top: 35%;
+        left: 10%;
+        animation: small 1.5s infinite;
+    }
+
+    &4 {
+        bottom: 10%;
+        right: 15%;
+        animation: small .5s infinite;
+    }
+
+    &5 {
+        top: 43%;
+        right: 20%;
+        animation: small 1.4s infinite;
+    }
+
+    &6 {
+        bottom: 13%;
+        right: 32%;
+        animation: small 1.2s infinite;
+    }
+
+    &7 {
+        bottom: 13%;
+        left: 32%;
+        animation: small 1.2s infinite;
+    }
+}
+
+@keyframes small {
+    0% {
+        opacity: 0;
+        transform: scale(0.3)
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(0.6);
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        background-color: #fff
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(0.3)
+    }
+}

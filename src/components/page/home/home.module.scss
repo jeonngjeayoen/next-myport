@@ -1,0 +1,164 @@
+@use '@styles/common' as *;
+
+.inner {
+    background: linear-gradient(180deg, rgba(54, 27, 117, 1) 0%, rgba(83, 47, 146, 1) 100%);
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+
+    .planet_box {
+        @include positionCenter;
+
+        .real_plate,
+        .half {
+            background: linear-gradient(30deg, rgba(125, 68, 141, 1) 0%, rgba(200, 131, 198, 1) 100%);
+            border-radius: 50%;
+            width: 370px;
+            height: 370px;
+        }
+
+        .real_plate {
+            box-shadow: 0 0 12px #fff;
+        }
+
+        .half_box {
+            position: absolute;
+            z-index: 999;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 185px;
+            overflow: hidden;
+        }
+    }
+
+    .back_bg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        pointer-events: none;
+
+        .back_bg_box,
+        .back_bg_box02 {
+            position: absolute;
+            width: 33%;
+            height: 1px;
+
+            .bg_line {
+                background: #fff;
+                width: 100%;
+                height: 1px;
+                transform: translateX(-100%);
+                transition: transform 1s ease;
+                opacity: .3;
+
+                &.active {
+                    transform: translateX(0);
+                }
+            }
+
+            .won {
+                width: 100px;
+                height: 100px;
+                border: 1px solid #fff;
+                border-radius: 50%;
+                opacity: .3;
+                transition: transform 1.5s ease;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%) scale(0);
+
+                &.active {
+                    transform: translate(-50%, -50%) scale(1);
+                }
+            }
+        }
+
+        .back_bg_box {
+            transform: rotate(-25deg);
+            bottom: 19vh;
+            left: -100px;
+        }
+
+        .back_bg_box02 {
+            transform: rotate(155deg);
+            top: 19vh;
+            right: -100px;
+
+            .won {
+                &.active {
+                    transform: translate(-50%, -50%) scale(1.2);
+                }
+            }
+        }
+    }
+
+    .star {
+
+        .star_span_star01 {
+            left: 10%;
+            top: 10%;
+            transform: rotate(45deg);
+        }
+
+        .star_span_star02 {
+            left: 25%;
+            top: 20%;
+            transform: rotate(145deg);
+        }
+
+        .star_span_star03 {
+            right: 25%;
+            bottom: 20%;
+            transform: rotate(-45deg);
+        }
+
+        span {
+            display: inline-block;
+            position: absolute;
+            display: block;
+            width: 54px;
+            height: 43px;
+
+            .real_star {
+                display: block;
+                width: 54px;
+                height: 43px;
+                background: url(/images/star.png) center center / contain no-repeat;
+                position: absolute;
+                z-index: 10;
+            }
+
+            .star_twinkle {
+                display: block;
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background: #ffffff4f;
+                box-sizing: border-box;
+                z-index: 1;
+                animation: tinkle .8s ease infinite;
+                position: absolute;
+                top: 17px;
+                right: 14px;
+            }
+
+            @keyframes tinkle {
+
+                0%,
+                100% {
+                    box-shadow: 0 0 3vw #fff, 0 0 3vw #fff, 0 0 10vw #fff, 0 0 10vw #fff, 0 0 .4vw #fff, ;
+                    color: #fff;
+                }
+
+                50% {
+                    box-shadow: 0 0 .8vw #fff, 0 0 1.5vw #fff, 0 0 5vw #fff, 0 0 5vw #fff, 0 0 .2vw #fff;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}

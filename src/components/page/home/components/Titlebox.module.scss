@@ -1,0 +1,30 @@
+@use '@styles/common' as *;
+
+.title_box {
+    @include positionCenter;
+    z-index: 9999;
+
+    .name_tit {
+        font-family: 'Tuesday Night';
+        @include positionCenter;
+        font-size: 80px;
+        color: #fff;
+        display: flex;
+        font-weight: 400;
+
+        span {
+            opacity: 0;
+        }
+    }
+
+    .dev_p {
+        display: flex;
+        color: $color-white;
+        @include position(absolute, $top: 135px, $left: 100px);
+        font-size: 25px;
+
+        span {
+            opacity: 0;
+        }
+    }
+}

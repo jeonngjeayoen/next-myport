@@ -1,0 +1,113 @@
+@use '@styles/common' as *;
+
+.typing_box {
+    width: 420px;
+    height: 200px;
+    font-size: 20px;
+    position: absolute;
+    right: 30px;
+    bottom: 280px;
+
+    &::before,
+    &::after {
+        @include pseudo('', 0px, 1px);
+        background: $color-white;
+        opacity: .7;
+        position: absolute;
+        transition: .8s;
+    }
+
+    &::before {
+        top: 0;
+        right: 0;
+    }
+
+    &::after {
+        bottom: 0;
+        left: 0;
+    }
+
+    .typing {
+        display: none;
+
+        &.active {
+            display: block;
+        }
+
+        .space {
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .wep {
+            font-size: 25px;
+            font-style: italic;
+        }
+
+        >div>span {
+            position: relative;
+        }
+
+        .cursor {
+            animation: blink .3s step-start infinite;
+            width: 1px;
+            height: 30px;
+            background: $color-white;
+            display: inline-block;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 0;
+        }
+
+        @keyframes blink {
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+        }
+
+        padding: 20px;
+        line-height: 50px;
+        color: $color-white;
+        opacity: .7;
+
+        &::before,
+        &::after {
+            @include pseudo('', 1px, 0);
+            background: $color-white;
+            opacity: .7;
+            position: absolute;
+            transition: .8s;
+        }
+
+        &::before {
+            bottom: 0;
+            right: 0;
+        }
+
+        &::after {
+            top: 0;
+            left: 0;
+        }
+
+        &.active {
+
+            &::before,
+            &::after {
+                @include pseudo('', 1px, 120px);
+            }
+        }
+    }
+
+    &.active {
+
+        &::before,
+        &::after {
+            @include pseudo('', 200px, 1px);
+        }
+    }
+}
