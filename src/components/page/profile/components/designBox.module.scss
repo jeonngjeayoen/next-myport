@@ -1,0 +1,7 @@
+@use '@styles/common' as *;
+
+.design_box {
+    .design_list {
+        @include flexCenter(center);
+    }
+}

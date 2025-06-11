@@ -1,0 +1,200 @@
+@use '@styles/common' as *;
+
+$fireColor: rgb(255, 80, 0);
+$fireColorT: rgba(255, 80, 0, 0);
+$dur: 1s;
+$blur: 0.02em;
+$fireRad: 3em;
+$parts: 50;
+$partSize: 5em;
+
+.h3_box {
+    @include flexCenter(start);
+    gap: 15px;
+
+    .skill_lab_h3 {
+        font-weight: bold;
+        font-size: 30px;
+        margin-bottom: 30px;
+        color: $color-white;
+    }
+
+    .h3_mouse {
+        width: 29px;
+        height: 42px;
+        display: inline-block;
+        position: relative;
+        top: -10px;
+        animation: blink .7s ease-in infinite;
+
+        &.active {
+            animation: none;
+            background: url(/images/mouse.png) center center / contain no-repeat;
+        }
+    }
+
+    p {
+        color: $color-white;
+    }
+
+    @keyframes blink {
+        from {
+            background: url(/images/mouse.png) center center / contain no-repeat;
+        }
+
+        to {
+            background: none;
+        }
+    }
+}
+
+.skill_lab {
+    width: 100%;
+    @include column-flexbox($jc: start, $ai: start);
+    gap: 20px;
+    cursor: pointer;
+
+    li {
+        width: 100%;
+        height: 25px;
+
+        .bar_bg {
+            background: #f0f0f0;
+            height: 25px;
+            overflow: hidden;
+
+            h4 {
+                position: relative;
+                z-index: 999;
+                line-height: 25px;
+                text-indent: 5px;
+            }
+
+            .bar {
+                position: relative;
+                top: -100%;
+                height: 100%;
+                width: 0;
+                background: #fddc7a;
+                transition: .5s;
+
+                span {
+                    display: block;
+                    padding: 0 5px;
+                    line-height: 25px;
+                    margin-right: 10px;
+                    background: #333;
+                    color: $color-white;
+                    position: absolute;
+                    text-align: center;
+                    right: -10px;
+                }
+            }
+        }
+    }
+
+    &:hover {
+        li {
+            &:first-child .bar {
+                width: 75%;
+            }
+
+            &:nth-child(2) .bar {
+                width: 80%;
+            }
+
+            &:nth-child(3) .bar {
+                width: 85%;
+            }
+
+            &:nth-child(4) .bar {
+                width: 100%;
+            }
+
+            &:nth-child(5) .bar {
+                width: 90%;
+            }
+
+            &:nth-child(6) .bar {
+                width: 90%;
+            }
+
+            &:nth-child(7) .bar {
+                width: 85%;
+            }
+
+            &:nth-child(8) .bar {
+                width: 80%;
+            }
+
+            &:nth-child(9) .bar {
+                width: 75%;
+            }
+
+            &:nth-child(10) .bar {
+                width: 70%;
+            }
+
+            &:nth-child(11) .bar {
+                width: 85%;
+            }
+
+            &:last-child {
+                h4 {
+                    color: $color-white;
+                }
+
+                .bar {
+                    width: 100%;
+                    background: #d61717;
+                }
+            }
+        }
+    }
+}
+
+.fire {
+    font-size: 10px;
+    filter: blur($blur);
+    -webkit-filter: blur($blur);
+    position: relative;
+    left: 96%;
+    width: 1em;
+    height: 1em;
+    top: -15px;
+}
+
+.particle {
+    animation: rise $dur ease-in infinite;
+    background-image: radial-gradient($fireColor 20%, $fireColorT 70%);
+    border-radius: 50%;
+    mix-blend-mode: screen;
+    opacity: 0;
+    position: absolute;
+    bottom: 0;
+    width: $partSize;
+    height: $partSize;
+
+    @for $p from 1 through $parts {
+        &:nth-of-type(#{$p}) {
+            animation-delay: $dur * random();
+            left: calc((100% - #{$partSize}) * #{($p - 1) / $parts});
+        }
+    }
+}
+
+@keyframes rise {
+    from {
+        opacity: 0;
+        transform: translateY(0) scale(1);
+    }
+
+    25% {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(-10em) scale(0);
+    }
+}

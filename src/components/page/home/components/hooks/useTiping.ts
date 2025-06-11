@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 type TypingChar = string | { char: string; className: string };
 
@@ -13,7 +13,7 @@ export function useTypingEffect(
     typingReady: boolean,
     intervalTime: number = 70
 ): TypingResult {
-    const lines = text.split('\n');
+    const lines = useMemo(() => text.split('\n'), [text]);
     const [lineIdx, setLineIdx] = useState(0);
     const [typingIdx, setTypingIdx] = useState(0);
     const [renderedLines, setRenderedLines] = useState<TypingChar[][]>([[]]);
@@ -55,8 +55,7 @@ export function useTypingEffect(
         }, intervalTime);
 
         return () => clearInterval(interval);
-    }, [typingReady, typingIdx, lineIdx, isTyping]);
+    }, [typingReady, typingIdx, lineIdx, isTyping, intervalTime, lines]);
 
     return { renderedLines, isTyping, lineIdx };
 }
-

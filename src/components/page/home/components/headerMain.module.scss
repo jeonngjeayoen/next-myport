@@ -99,7 +99,6 @@
     transform: scale(0);
     border-radius: 50%;
     background-color: white;
-    transition: all 1s ease;
     left: 49%;
     top: 50%;
     opacity: 0;
@@ -109,22 +108,25 @@
         top: 30px;
         opacity: 1;
         transform: scale(1);
+        transition: all .6s ease;
     }
 
     &.ballAnimate02 {
         left: 50px;
+        transition: all .6s ease;
     }
 
     &.ballAnimate03 {
         transform: translate(-30%, -30%);
-        width: 3000px;
-        height: 3000px;
+        width: 170vw;
+        height: 170vw;
         z-index: 99999;
+        transition: all .8s ease;
     }
 }
 
 .ball1 {
-    background: linear-gradient(0deg, rgba(63, 146, 193, 1) 0%, rgba(43, 176, 126, 1) 100%);
+    background: $earth-color;
 }
 
 .ball2 {
