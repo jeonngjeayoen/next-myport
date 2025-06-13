@@ -5,8 +5,6 @@ import { useEffect, useState } from "react";
 import Skillbox from "./components/skillBox.component"
 import DejignBox from "./components/designBox.component"
 
-
-
 export default function Profile() {
     const names = ["정재연", "Jung Jea Yeon", "JeaYeon", "鄭在硯"];
     const [activeIdx, setActiveIdx] = useState(0);
@@ -70,7 +68,7 @@ export default function Profile() {
                 </ul>
             </section>
             <section className={styles.section02}>
-                <h3>DESIGN</h3>
+                <h3 className={styles.section02_h3}>DESIGN TOOL</h3>
                 <DejignBox />
             </section>
         </main>

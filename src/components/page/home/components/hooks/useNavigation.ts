@@ -32,10 +32,8 @@ export const useBallNavigation = () => {
             } else if (stage === 3) {
                 ball.removeEventListener("transitionend", handleTransition);
                 const url = `/${planetClass}`;
-                setTimeout(() => {
-                    if (index === 4) window.location.href = url;
-                    else router.push(url);
-                }, 500);
+                if (index === 4) window.location.href = url;
+                else router.push(url);
             }
         };
 

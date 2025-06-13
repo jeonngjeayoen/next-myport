@@ -1,0 +1,46 @@
+@use '@styles/common' as *;
+
+.footer {
+    height: 200px;
+    padding: 0 50px;
+    background: $color-black;
+    color: $color-white;
+    @include flexCenter(space-between);
+
+    .footer_logo {
+        width: 127px;
+        height: 90px;
+        background: url(/images/footer_logo.png) center center / contain no-repeat;
+        display: inline-block;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .footer {
+        flex-wrap: wrap;
+        padding: 0 20px;
+
+        h2,
+        a {
+            text-align: center;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .footer_logo {
+            height: 60px;
+        }
+
+        p {
+            font-size: 12px;
+            text-align: center;
+            width: 100%;
+        }
+
+        aside {
+            margin-left: auto;
+            font-size: 14px;
+            padding-bottom: 20px;
+        }
+    }
+}

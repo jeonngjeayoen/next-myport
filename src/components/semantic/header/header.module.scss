@@ -8,6 +8,7 @@
     position: fixed;
     padding: 0 40px;
     background: #ffffff31;
+    z-index: 999;
 
     h1 {
         position: absolute;
@@ -32,6 +33,18 @@
             width: 100%;
             @include flexCenter(space-between);
 
+            li {
+                transition: .3s;
+
+                &:first-child:hover {
+                    transform: translateX(-15px)
+                }
+
+                &:last-child:hover {
+                    transform: translateX(15px)
+                }
+            }
+
             a {
                 @include flexCenter(center);
                 gap: 4px;
@@ -40,6 +53,37 @@
 
                 svg {
                     width: 14px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:500px) {
+    .header {
+        width: calc(100vw - 40px);
+        padding: 0 20px;
+
+        h1 {
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%);
+
+            .h1_logo {
+                height: 60px;
+            }
+        }
+
+        nav {
+            width: 100%;
+
+            ul {
+                a {
+                    font-size: 14px;
+
+                    svg {
+                        width: 12px;
+                    }
                 }
             }
         }

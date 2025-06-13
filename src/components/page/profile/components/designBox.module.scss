@@ -2,6 +2,189 @@
 
 .design_box {
     .design_list {
-        @include flexCenter(center);
+        display: flex;
+        height: 600px;
+        background: #684ea3;
+
+        li {
+            width: 100%;
+            height: 300px;
+            position: relative;
+            cursor: pointer;
+
+            h3 {
+                position: absolute;
+                text-shadow: 2px 2px 5px #33333394;
+                z-index: 10;
+            }
+
+            .img_box {
+                width: 100%;
+                height: 100%;
+            }
+
+            &:nth-child(2n-1) {
+                h3 {
+                    bottom: 0;
+                    transform: translateY(50%);
+                }
+            }
+
+            &:nth-child(2n) {
+                position: relative;
+                bottom: -300px;
+
+                h3 {
+                    transform: translateY(-50%);
+                }
+            }
+
+            .real_img {
+                width: 100%;
+                height: 100%;
+                display: inline-block;
+            }
+
+            .img_line01,
+            .img_line02,
+            .img_line03,
+            .img_line04 {
+                @include pseudo("", 5px, 0%);
+                background: $color-white;
+                position: absolute;
+            }
+
+            .img_line01,
+            .img_line03 {
+                @include pseudo("", 0%, 5px);
+            }
+
+            &:hover {
+
+                .img_line01,
+                .img_line02,
+                .img_line03,
+                .img_line04 {
+                    @include pseudo("", 5px, 80%);
+                    background: $color-white;
+                    position: absolute;
+                    transition: .3s
+                }
+
+                .img_line01,
+                .img_line03 {
+                    @include pseudo("", 100%, 5px);
+                }
+            }
+
+            .img_line01 {
+                top: 10px;
+                left: 0px;
+            }
+
+            .img_line02 {
+                top: 10px;
+                right: 10px;
+            }
+
+            .img_line03 {
+                bottom: 10px;
+            }
+
+            .img_line04 {
+                bottom: 0;
+                left: 10px;
+            }
+
+            &:first-child .real_img {
+                background: url(/images/figma.png) center center / cover no-repeat;
+            }
+
+            &:nth-child(2) .real_img {
+                background: url(/images/photoshop.jpg) center center / cover no-repeat;
+            }
+
+            &:nth-child(3) .real_img {
+                background: url(/images/XD.png) center center / cover no-repeat;
+            }
+
+            &:last-child .real_img {
+                background: url(/images/illu.png) center center / cover no-repeat;
+            }
+
+            .commonBall {
+                width: 0;
+                height: 0;
+                @include positionCenter;
+                border-radius: 50%;
+                transition: .6s;
+                pointer-events: none;
+                z-index: 9999;
+
+                &.e_ball1 {
+                    background: #BE7CC1;
+                }
+
+                &.e_ball2 {
+                    background: #6b6b6b;
+                }
+
+                &.e_ball3 {
+                    background: #ED79A0;
+                }
+
+                &.e_ball4 {
+                    background: #249A96;
+                }
+
+                &.ballAnimate01 {
+                    width: 200vw;
+                    height: 200vw;
+                }
+            }
+        }
+    }
+
+    .modal_box_wrap {
+        display: none;
+
+        &.ballAnimate02 {
+            display: block;
+        }
+    }
+}
+
+@media screen and (max-width:1300px) {
+    .design_box {
+        .design_list {
+            flex-wrap: wrap;
+            height: 1200px;
+
+            li {
+                width: 50%;
+
+                .commonBall {
+                    &.ballAnimate01 {
+                        width: 2000px;
+                        height: 2000px;
+                    }
+                }
+
+                &:hover {
+
+                    .img_line01,
+                    .img_line02,
+                    .img_line03,
+                    .img_line04 {
+                        display: none;
+                    }
+
+                    .img_line01,
+                    .img_line03 {
+                        display: none;
+                    }
+                }
+            }
+        }
     }
 }

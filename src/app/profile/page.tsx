@@ -1,4 +1,5 @@
 import Header from "@components/semantic/header/header.component";
+import Footer from "@components/semantic/footer/footer.component";
 import ProfileComponent from "@components/page/profile/profile.component";
 
 export default function Home() {
@@ -7,6 +8,7 @@ export default function Home() {
         <>
             <Header before={"contect"} after={"single"} />
             <ProfileComponent />
+            <Footer />
         </>
     )
 }
