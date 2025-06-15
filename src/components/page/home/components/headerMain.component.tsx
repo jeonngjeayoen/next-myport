@@ -10,7 +10,7 @@ export default function HomeHeader() {
     const { ballsRef, iconsRef, animate } = useBallNavigation();
     const navRef = useRef<HTMLUListElement>(null);
 
-    const menuLabels = ["profile", "single", "team", "contact"];
+    const menuLabels = ["profile", "practical", "team", "contact"];
     const planetClassList = ["earth", "mars", "jupiter", "Neptune"];
 
     useLayoutEffect(() => {

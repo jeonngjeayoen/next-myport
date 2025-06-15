@@ -9,7 +9,7 @@ export const useBallNavigation = () => {
     const iconsRef = useRef<HTMLSpanElement[]>([]);
     const router = useRouter();
 
-    const planetClassList = ["profile", "single", "team", "contact"];
+    const planetClassList = ["profile", "practical", "team", "contact"];
 
     const animate = (index: number) => {
         const ball = ballsRef.current[index - 1];

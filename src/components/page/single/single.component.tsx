@@ -5,6 +5,7 @@ import styles from "./single.module.scss";
 import TinkleBack from "../../semantic/back/tinkleBack.component";
 import Rocket from "./components/rocketBox.component"
 import RotateBox from "./components/rotateBox.component"
+import { useStaggeredActivation } from "./components/hooks/useStaggeredActivation";
 
 const rotateBoxData = [
     {
@@ -39,26 +40,8 @@ const rotateBoxData = [
 
 export default function Single() {
     const [isActive, setIsActive] = useState(false);
-    const [activeBoxes, setActiveBoxes] = useState<boolean[]>(Array(rotateBoxData.length).fill(false));
-
-    useEffect(() => {
-        const length = rotateBoxData.length;
-        const delays = [800, 1800, 2400, 3300];
-
-        rotateBoxData.forEach((_, index) => {
-            const reversedIndex = length - 1 - index;
-            const delay = delays[index] ?? index * 1000; // 혹시라도 delays 길이 초과시 fallback
-
-            setTimeout(() => {
-                setActiveBoxes(prev => {
-                    const newActive = [...prev];
-                    newActive[reversedIndex] = true;
-                    return newActive;
-                });
-            }, delay);
-        });
-    }, []);
-
+    const delays = [800, 1800, 2400, 3300];
+    const activeBoxes = useStaggeredActivation(rotateBoxData.length, delays);
 
     useEffect(() => {
         setIsActive(true);
