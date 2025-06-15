@@ -1,0 +1,120 @@
+@use '@styles/common' as *;
+
+.single_wrap {
+    background: $single-color;
+    width: 100%;
+    height: 100vh;
+
+    .back_illu {
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        z-index: 0;
+        overflow: hidden;
+
+        .illu {
+            width: 100%;
+            height: 100%;
+            background: url(/images/single_bg.png) center bottom / contain no-repeat;
+            transform: translateY(300px);
+            transition: .8s;
+
+            &.active {
+                transform: translateY(150px);
+            }
+        }
+    }
+
+    .section01 {
+        position: relative;
+        z-index: 1;
+
+        .rotate_box_common {
+            >div {
+                position: absolute;
+            }
+
+            .air_balloon {
+                width: 100%;
+                height: 126px;
+                margin-bottom: 10px;
+            }
+
+            .rotate_box_wrap01 {
+                top: 0px;
+                left: 5%;
+
+                .air_balloon {
+                    background: url(/images/buble04.png) center bottom / contain no-repeat;
+                }
+
+                &.active {
+                    top: 30vh;
+                }
+            }
+
+            .rotate_box_wrap02 {
+                top: 0px;
+                left: 30%;
+
+                .air_balloon {
+                    background: url(/images/buble03.png) center bottom / contain no-repeat;
+                }
+
+                &.active {
+                    top: 18vh;
+                }
+            }
+
+            .rotate_box_wrap03 {
+                top: 0px;
+                right: 28%;
+
+                .air_balloon {
+                    background: url(/images/buble02.png) center bottom / contain no-repeat;
+                }
+
+                &.active {
+                    top: 35vh;
+                }
+            }
+
+            .rotate_box_wrap04 {
+                top: 0px;
+                right: 3%;
+
+                .air_balloon {
+                    background: url(/images/buble01.png) center bottom / contain no-repeat;
+                }
+
+                &.active {
+                    top: 15vh;
+                }
+            }
+
+            .rotate_box_wrap01,
+            .rotate_box_wrap02,
+            .rotate_box_wrap03,
+            .rotate_box_wrap04 {
+                transform: scale(0);
+                transition: 3s;
+
+                &.active {
+                    transform: scale(1);
+                    animation: buble 1s linear 0s infinite alternate;
+                }
+
+                @keyframes buble {
+                    0% {
+                        margin-top: 0px;
+                    }
+
+                    100% {
+                        margin-top: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
