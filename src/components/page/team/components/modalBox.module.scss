@@ -1,0 +1,265 @@
+@use '@styles/common' as *;
+
+.modal_box {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    z-index: 9999999;
+    text-align: center;
+    padding-top: 200px;
+    transition: .3s;
+    opacity: 1;
+    overflow-y: scroll;
+    cursor: pointer;
+
+    &.active {
+        opacity: 1;
+        padding-top: 150px;
+    }
+
+    .modal_box01 {
+        background: #f3f1ff;
+
+        .first_figma {
+            ul {
+                @include flexCenter(center);
+                gap: 50px;
+
+                li {
+                    display: inline-block;
+                }
+
+                .img01 {
+                    background: url(/images/sass.png) center center / contain no-repeat;
+                    width: 181px;
+                    height: 136px;
+                }
+
+                .img02 {
+                    background: url(/images/typescript.png) center center / contain no-repeat;
+                    width: 147px;
+                    height: 147px;
+                }
+
+                .img03 {
+                    background: url(/images/nodejs.png) center center / contain no-repeat;
+                    width: 253px;
+                    height: 155px;
+                }
+
+                .img04 {
+                    background: url(/images/nextjs.png) center center / contain no-repeat;
+                    width: 252px;
+                    height: 63px;
+                }
+
+                .img05 {
+                    background: url(/images/vercel.png) center center / contain no-repeat;
+                    width: 270px;
+                    height: 68px;
+                }
+            }
+        }
+
+        .second_figma {
+            background: url(/images/user_flow.png) center center / contain no-repeat;
+            max-width: 800px;
+            width: 100%;
+            height: 400px;
+            margin: 0 auto;
+        }
+
+        .last_figma {
+            background: url(/images/main_figam.jpg) center center / contain no-repeat;
+            max-width: 800px;
+            width: 100%;
+            height: 145vw;
+            max-height: 2600px;
+            margin: 0 auto;
+            margin-bottom: 200px;
+        }
+    }
+
+    .modal_box02 {
+        background: #d9d9d9;
+
+        .first_photo {
+            ul {
+                @include flexCenter(center);
+                gap: 100px;
+
+                li {
+                    width: 308px;
+                    height: 422px;
+                }
+
+                .img01 {
+                    background: url(/images/mok01.png) center center / contain no-repeat;
+                }
+
+                .img02 {
+                    background: url(/images/mok02.png) center center / contain no-repeat;
+                }
+
+                .img03 {
+                    background: url(/images/mok03.png) center center / contain no-repeat;
+                }
+            }
+        }
+    }
+
+    .modal_box03 {
+        background: #DAE7EC;
+
+        .first_photo {
+            ul {
+                @include flexCenter(center);
+                gap: 100px;
+
+                li {
+                    width: 308px;
+                    height: 600px;
+                }
+
+                .img01 {
+                    background: url(/images/xd01.png) center center / contain no-repeat;
+                }
+
+                .img02 {
+                    background: url(/images/xd02.png) center center / contain no-repeat;
+                }
+
+                .img03 {
+                    background: url(/images/xd03.png) center center / contain no-repeat;
+                }
+            }
+        }
+    }
+
+    .modal_box04 {
+        background: #DDD3C7;
+        @include flexCenter(center);
+
+        .ilue {
+            background: url(/images/illu_main.png) center center / contain no-repeat;
+            width: 100%;
+            height: 200vw;
+            display: inline-block;
+            margin-bottom: 200px;
+        }
+    }
+}
+
+.delet_btn {
+    position: fixed;
+    right: 200px;
+    top: 100px;
+
+    &::after,
+    &::before {
+        @include pseudo("", 2px, 50px);
+        background: $color-white;
+        position: absolute;
+    }
+
+    &::after {
+        transform: rotate(-45deg);
+        top: 0;
+    }
+
+    &::before {
+        transform: rotate(45deg);
+        top: 0;
+    }
+}
+
+@media screen and (max-width:1300px) {
+    .modal_box {
+        .modal_box01 {
+            .first_figma {
+                ul {
+                    flex-wrap: wrap;
+
+                    li.img01,
+                    li.img02,
+                    li.img03,
+                    li.img04,
+                    li.img05 {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        .modal_box02,
+        .modal_box03 {
+            .first_photo {
+                padding-bottom: 200px;
+
+                ul {
+                    flex-wrap: wrap;
+
+                    li {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:500px) {
+    .modal_box {
+        .modal_box01 {
+            .first_figma {
+                ul {
+
+                    li.img01,
+                    li.img02,
+                    li.img03 {
+                        height: 100px;
+                    }
+
+                    li.img04,
+                    li.img05 {
+                        height: 50px;
+                    }
+                }
+            }
+        }
+    }
+
+    .delet_btn {
+        position: fixed;
+        right: 80px;
+        top: 50px;
+
+        &::after,
+        &::before {
+            @include pseudo("", 1px, 30px);
+        }
+    }
+
+    .modal_box02,
+    .modal_box04 {
+        &:after {
+            @include pseudo("", 100%, 100vh);
+            position: absolute;
+            top: 0;
+            z-index: -1;
+        }
+    }
+
+    .modal_box02 {
+        &:after {
+            background: #6b6b6b;
+        }
+    }
+
+    .modal_box04 {
+        &:after {
+            background: #249A96;
+        }
+    }
+}
