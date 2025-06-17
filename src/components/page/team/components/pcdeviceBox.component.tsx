@@ -3,7 +3,6 @@
 import styles from "./pcdeviceBox.module.scss";
 import Link from "next/link";
 import useTransitionStage from "./hooks/useTransitionStage";
-
 const tabData = [
     {
         label: "TECH BLOG",
@@ -65,18 +64,26 @@ const tabData = [
         ],
     },
 ];
-export default function PcBox() {
+interface PcBoxProps {
+    index: number;
+    onTabChange: (index: number) => void;
+}
+export default function PcBox({ index, onTabChange }: PcBoxProps) {
     const {
         selectedIndex,
         immediateTabIndex,
         isActive,
         isActive02,
         screenRef,
-        handleTabChange,
-    } = useTransitionStage(3);
+        handleTabChange
+    } = useTransitionStage(index);
 
     const currentTab = tabData[selectedIndex];
 
+    const handleClick = (i: number) => {
+        onTabChange(i);     // 부모에게 전달 (모바일 동기화용)
+        handleTabChange(i); // 내부 전환
+    };
     return (
         <div className={styles.container}>
             <div className={styles.tab_box}>
@@ -85,7 +92,7 @@ export default function PcBox() {
                         <li
                             key={i}
                             className={i === immediateTabIndex ? styles.active : ""}
-                            onClick={() => handleTabChange(i)}
+                            onClick={() => handleClick(i)}
                         >
                             {tab.label}
                         </li>

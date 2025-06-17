@@ -34,7 +34,7 @@ export default function Teamback() {
         actions.forEach(([delay, func]) => {
             setTimeout(func, delay);
         });
-    }, []);
+    }, [refs.lightning01, refs.lightning02, refs.sumkwang]);
 
     return (
         <>

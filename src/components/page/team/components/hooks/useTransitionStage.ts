@@ -1,6 +1,9 @@
 import { useState, useEffect, useRef } from "react";
 
-export default function useTransitionStage(initialIndex: number) {
+export default function useTransitionStage(
+    initialIndex: number,
+    delay = 1500
+) {
     const [selectedIndex, setSelectedIndex] = useState(initialIndex);
     const [immediateTabIndex, setImmediateTabIndex] = useState(initialIndex);
     const [isActive, setIsActive] = useState(false);
@@ -38,9 +41,12 @@ export default function useTransitionStage(initialIndex: number) {
     }, [direction]);
 
     useEffect(() => {
-        setDirection("in");
-        setIsActive(true);
-    }, []);
+        const timer = setTimeout(() => {
+            setDirection("in");
+            setIsActive(true);
+        }, delay);
+        return () => clearTimeout(timer);
+    }, [delay]);
 
     const handleTabChange = (index: number) => {
         if (index === selectedIndex) return;
@@ -56,6 +62,6 @@ export default function useTransitionStage(initialIndex: number) {
         isActive,
         isActive02,
         screenRef,
-        handleTabChange,
+        handleTabChange
     };
 }

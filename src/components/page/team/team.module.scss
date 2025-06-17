@@ -12,8 +12,8 @@
         top: 0;
         z-index: 0;
         overflow: hidden;
-        z-index: 1;
         pointer-events: none;
+        z-index: 1;
 
         .illu {
             width: 100%;
@@ -30,6 +30,6 @@
 
     .section01 {
         position: relative;
-        z-index: 1;
+        z-index: 2;
     }
 }
