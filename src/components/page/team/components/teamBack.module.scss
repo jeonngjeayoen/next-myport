@@ -1,0 +1,64 @@
+@use '@styles/common' as *;
+
+.team_back_wrap {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 999;
+
+    .sumkwang {
+        width: 100%;
+        height: 100%;
+        background: $color-white;
+        transition: .1s;
+        display: none;
+        position: absolute;
+        z-index: 99999;
+
+        &.on01 {
+            display: block;
+        }
+
+        &.on02 {
+            opacity: 0;
+            transition: .8s;
+        }
+    }
+}
+
+.lightning_box {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    .lightning01 {
+        width: 100%;
+        height: 100%;
+        background: url(/images/lighting.png) center top / contain no-repeat;
+        display: none;
+        position: absolute;
+        z-index: -1;
+
+        &.on {
+            display: block;
+        }
+    }
+
+    .lightning02 {
+        width: 100%;
+        height: 100%;
+        background: url(/images/lighting02.png) center top / contain no-repeat;
+        display: none;
+        position: absolute;
+        z-index: -1;
+
+        &.on {
+            display: block;
+        }
+    }
+}

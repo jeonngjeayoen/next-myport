@@ -3,7 +3,7 @@
 import styles from "./team.module.scss"
 import TinkleBack from "../../semantic/back/tinkleBack.component";
 import PcBox from "./components/pcdeviceBox.component";
-
+import Teamback from "./components/teamBack.component";
 import { useEffect, useState } from "react";
 
 export default function Team() {
@@ -20,6 +20,7 @@ export default function Team() {
                 <TinkleBack />
                 <div className={`${styles.illu} ${isActive ? styles.active : ""}`}></div>
             </div>
+            <Teamback />
         </main>
     )
 }

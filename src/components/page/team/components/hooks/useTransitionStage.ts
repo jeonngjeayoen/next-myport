@@ -2,13 +2,13 @@ import { useState, useEffect, useRef } from "react";
 
 export default function useTransitionStage(initialIndex: number) {
     const [selectedIndex, setSelectedIndex] = useState(initialIndex);
-    const [isActive, setIsActive] = useState(false);     // width
-    const [isActive02, setIsActive02] = useState(false); // height
+    const [immediateTabIndex, setImmediateTabIndex] = useState(initialIndex);
+    const [isActive, setIsActive] = useState(false);
+    const [isActive02, setIsActive02] = useState(false);
     const [direction, setDirection] = useState<"in" | "out" | null>(null);
     const screenRef = useRef<HTMLDivElement>(null);
     const pendingIndexRef = useRef<number>(initialIndex);
 
-    // 진입/퇴장 애니메이션 관리
     useEffect(() => {
         const el = screenRef.current;
         if (!el) return;
@@ -37,15 +37,14 @@ export default function useTransitionStage(initialIndex: number) {
         return () => el.removeEventListener("transitionend", handleTransition);
     }, [direction]);
 
-    // 초기 시작
     useEffect(() => {
         setDirection("in");
         setIsActive(true);
     }, []);
 
-    // 탭 클릭 처리
     const handleTabChange = (index: number) => {
         if (index === selectedIndex) return;
+        setImmediateTabIndex(index);
         setDirection("out");
         pendingIndexRef.current = index;
         setIsActive02(false);
@@ -53,6 +52,7 @@ export default function useTransitionStage(initialIndex: number) {
 
     return {
         selectedIndex,
+        immediateTabIndex,
         isActive,
         isActive02,
         screenRef,

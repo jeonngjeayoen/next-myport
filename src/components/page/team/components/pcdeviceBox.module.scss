@@ -10,12 +10,61 @@
     .tab_box {
         position: absolute;
         top: -20px;
-        right: 0;
+        right: 10px;
         z-index: 1;
 
         ul {
             @include flexCenter(start);
-            gap: 10px
+            gap: 20px;
+
+            li {
+                width: 85px;
+                text-align: center;
+                height: 50px;
+                border: 1px solid $color-white;
+                color: $color-white;
+                font-size: 12px;
+                line-height: 20px;
+                transition: .3s;
+                position: relative;
+                top: 0;
+                cursor: pointer;
+
+                &.active {
+                    top: -30px;
+                    line-height: 50px;
+                    font-weight: bold;
+                }
+
+                &:last-child {
+                    &.active {
+                        background: #8CC63F;
+                        border: 1px solid #8CC63F;
+                    }
+                }
+
+                &:nth-child(3) {
+                    &.active {
+                        background: #FCB416;
+                        border: 1px solid #FCB416;
+                        color: #484C55;
+                    }
+                }
+
+                &:nth-child(2) {
+                    &.active {
+                        background: #112F69;
+                        border: 1px solid #112F69;
+                    }
+                }
+
+                &:first-child {
+                    &.active {
+                        background: #614cf6;
+                        border: 1px solid #614cf6;
+                    }
+                }
+            }
         }
     }
 
@@ -80,12 +129,41 @@
     .text_box {
         position: absolute;
         top: 0;
-        z-index: 9999;
+        z-index: 1;
         width: 100%;
         height: 100%;
+        color: $color-white;
+
+        &.screen01 {
+            li:hover {
+                border: 1px solid #614cf6;
+                background: #614cf6;
+            }
+        }
+
+        &.screen02 {
+            li:hover {
+                border: 1px solid #112F69;
+                background: #112F69;
+            }
+        }
+
+        &.screen03 {
+            li:hover {
+                border: 1px solid #FCB416;
+                background: #FCB416;
+            }
+        }
+
+        &.screen04 {
+            li:hover {
+                border: 1px solid #8CC63F;
+                background: #8CC63F;
+            }
+        }
 
         >div {
-            top: 50%;
+            top: 30%;
             transform: translateY(-50%);
             position: absolute;
         }
@@ -93,6 +171,30 @@
         .right_box {
             right: 20%;
             transition: .5s;
+
+            ul {
+                @include column-flexbox($jc: center, $ai: center);
+                gap: 40px;
+
+                li {
+                    width: 90px;
+                    height: 40px;
+                    border: 1px solid $color-white;
+                    color: $color-white;
+
+                    &:hover {
+                        box-shadow: 4px 4px 20px #0000003b;
+                    }
+
+                    a {
+                        display: inline-block;
+                        width: 100%;
+                        line-height: 40px;
+                        text-align: center;
+                        font-size: 12px;
+                    }
+                }
+            }
 
             &.active {
                 right: -200px;
@@ -103,8 +205,16 @@
             left: 20%;
             transition: .5s;
 
+            h2 {
+                padding-bottom: 20px;
+            }
+
+            li {
+                line-height: 30px;
+            }
+
             &.active {
-                left: -250px;
+                left: -300px;
             }
 
             text-align: right;
