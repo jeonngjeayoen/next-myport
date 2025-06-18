@@ -7,7 +7,6 @@
     top: 0;
     z-index: 9999;
     text-align: center;
-    padding-top: 200px;
     transition: .3s;
     opacity: 0;
     overflow-y: scroll;
@@ -16,6 +15,10 @@
     &.active {
         opacity: 1;
         padding-top: 150px;
+    }
+
+    div>ul {
+        padding-top: 200px;
     }
 
     .modal_box01 {
@@ -238,28 +241,6 @@
         &::after,
         &::before {
             @include pseudo("", 1px, 30px);
-        }
-    }
-
-    .modal_box02,
-    .modal_box04 {
-        &:after {
-            @include pseudo("", 100%, 100vh);
-            position: absolute;
-            top: 0;
-            z-index: -1;
-        }
-    }
-
-    .modal_box02 {
-        &:after {
-            background: #6b6b6b;
-        }
-    }
-
-    .modal_box04 {
-        &:after {
-            background: #249A96;
         }
     }
 }

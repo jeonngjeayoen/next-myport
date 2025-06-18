@@ -92,6 +92,7 @@
             height: 29vw;
             width: 100%;
             @include flexCenter(center);
+            cursor: pointer;
 
             .screen {
                 width: 0;
