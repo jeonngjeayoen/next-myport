@@ -3,7 +3,8 @@
 import { useState, useRef, useEffect } from "react";
 import styles from "./chatBox.module.scss";
 import { useFormattedMessages } from "./hooks/useFormattedMessages";
-import { keywordResponses, initialMessage } from "./data/chatData";
+import { initialMessage } from "./data/chatData";
+import { useChatHandler } from "./hooks/useChatHandler";
 
 interface ChatboxProps {
     externalInput: string;
@@ -20,6 +21,8 @@ export default function Chatbox({ externalInput, submitTrigger, clearExternalInp
         setMessages([initialMessage]);
     }, []);
 
+    const { handleSubmit } = useChatHandler({ setMessages, clearExternalInput, setInput });
+
     const { formattedMessages, displayText } = useFormattedMessages(messages);
 
     useEffect(() => {
@@ -28,37 +31,11 @@ export default function Chatbox({ externalInput, submitTrigger, clearExternalInp
         }
     }, [messages, displayText]);
 
-    // ✅ 외부에서 값 전달되면 자동 제출
     useEffect(() => {
         if (externalInput) {
             handleSubmit(externalInput);
         }
-    }, [submitTrigger]);
-
-    const findResponse = (userInput: string): string => {
-        const trimmed = userInput.trim();
-        for (const group of keywordResponses) {
-            if (group.keywords.includes(trimmed)) {
-                return group.response;
-            }
-        }
-        return "죄송해요. 아직 모르는 질문이에요!";
-    };
-
-    const handleSubmit = (value: string) => {
-        const userMsg = value.trim();
-        if (!userMsg) return;
-
-        const response = findResponse(userMsg);
-        setMessages((prev) => [...prev, { sender: "user", text: userMsg }]);
-
-        setTimeout(() => {
-            setMessages((prev) => [...prev, { sender: "bot", text: response }]);
-        }, 100);
-
-        setInput("");
-        clearExternalInput(); // ✅ 외부 상태 초기화
-    };
+    }, [submitTrigger, externalInput, handleSubmit]);
 
     const handleFormSubmit = (e: React.FormEvent) => {
         e.preventDefault();
@@ -88,4 +65,3 @@ export default function Chatbox({ externalInput, submitTrigger, clearExternalInp
         </div>
     );
 }
-
