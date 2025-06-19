@@ -6,7 +6,7 @@ export default function Home() {
 
     return (
         <>
-            <Header before={"practical"} after={"contact"} />
+            <Header before={"practical"} after={"profile"} />
             <TeamComponent />
             <Footer />
         </>
