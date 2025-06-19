@@ -8,7 +8,6 @@ import { useEffect, useState } from "react"
 export default function Contact() {
     const [isActive, setIsActive] = useState(false);
 
-    // ✅ 공통 상태 추가
     const [externalInput, setExternalInput] = useState("");
     const [submitTrigger, setSubmitTrigger] = useState(0);
 

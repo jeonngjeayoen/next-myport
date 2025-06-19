@@ -6,12 +6,6 @@ interface Message {
     text: string;
 }
 
-interface UseChatHandlerOptions {
-    setMessages: React.Dispatch<React.SetStateAction<Message[]>>;
-    clearExternalInput: () => void;
-    setInput: React.Dispatch<React.SetStateAction<string>>;
-}
-
 export function useChatHandler({
     setMessages,
     clearExternalInput,
@@ -19,7 +13,7 @@ export function useChatHandler({
 }: {
     setMessages: React.Dispatch<React.SetStateAction<Message[]>>;
     clearExternalInput: () => void;
-    setInput: React.Dispatch<React.SetStateAction<string>>; // ✅ 이거 필수!
+    setInput: React.Dispatch<React.SetStateAction<string>>;
 }) {
     const findResponse = useCallback((input: string): string => {
         const trimmed = input.trim();
@@ -44,7 +38,7 @@ export function useChatHandler({
                 setMessages((prev) => [...prev, { sender: "bot", text: response }]);
             }, 100);
 
-            setInput(""); // ✅ 이게 있어야 input 비워짐
+            setInput("");
             clearExternalInput();
         },
         [findResponse, setMessages, clearExternalInput, setInput]
