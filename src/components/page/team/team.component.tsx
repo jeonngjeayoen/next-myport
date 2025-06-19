@@ -6,7 +6,7 @@ import PcBox from "./components/pcdeviceBox.component";
 import MoBox from "./components/mobileBox.component";
 import Teamback from "./components/teamBack.component";
 import Modal from "./components/modalBox.component";
-import { tabData } from "./data/tabData";
+import { tabData } from "./components/data/tabData";
 import { useEffect, useState, useRef } from "react";
 import { useDetectBallGrowth } from "./components/hooks/useDetectBallGrowth";
 

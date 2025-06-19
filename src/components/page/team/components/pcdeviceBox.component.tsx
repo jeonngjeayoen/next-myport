@@ -3,7 +3,7 @@
 import styles from "./pcdeviceBox.module.scss";
 import Link from "next/link";
 import useTransitionStage from "./hooks/useTransitionStage";
-import { tabData } from "../data/tabData";
+import { tabData } from "./data/tabData";
 
 interface PcBoxProps {
     index: number;

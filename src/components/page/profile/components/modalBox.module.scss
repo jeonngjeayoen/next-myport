@@ -11,13 +11,14 @@
     opacity: 0;
     overflow-y: scroll;
     cursor: pointer;
+    padding-top: 50px;
 
     &.active {
         opacity: 1;
-        padding-top: 150px;
+        padding-top: 0px;
     }
 
-    div>ul {
+    >ul {
         padding-top: 200px;
     }
 
