@@ -56,6 +56,10 @@
 @media screen and (max-width:500px) {
     .path_box {
         width: 350px;
-        height: 154px;
+        height: 174px;
+
+        .rotete_star {
+            top: -20px;
+        }
     }
 }

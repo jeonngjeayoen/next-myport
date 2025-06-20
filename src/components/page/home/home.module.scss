@@ -248,8 +248,13 @@
 
 @media screen and (max-width:500px) {
     .inner {
-        .star {
+        .planet_box {
+            .half_box {
+                height: 105px;
+            }
+        }
 
+        .star {
             .star_span_star02 {
                 top: 30%;
             }
