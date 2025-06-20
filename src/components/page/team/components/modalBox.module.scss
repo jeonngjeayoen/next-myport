@@ -119,10 +119,16 @@
             }
         }
     }
+
+    .delet_btn {
+        right: 100px;
+    }
 }
 
 @media screen and (max-width:500px) {
     .modal_box {
+        overflow-x: hidden;
+
         .modal_box01 {
             .first_figma {
                 ul {
@@ -173,5 +179,12 @@
         &:after {
             background: #249A96;
         }
+    }
+}
+
+@media screen and (max-width:450px) {
+    .delet_btn {
+        right: 50px;
+        top: 20px;
     }
 }

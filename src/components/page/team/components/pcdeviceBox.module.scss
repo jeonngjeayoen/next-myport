@@ -270,7 +270,6 @@
             }
 
             .right_box {
-
                 &.active {
                     right: 0;
                     top: 50vw;
@@ -280,6 +279,100 @@
             >div {
                 top: 50%;
                 transform: translateY(-50%);
+            }
+        }
+
+        .pc_box {
+            .img_box {
+                min-height: 400px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:1000px) {
+    .container {
+        .tab_box {
+            width: 100%;
+            right: 0;
+
+            ul {
+                li {
+                    width: 15%;
+                }
+
+                justify-content: center;
+            }
+        }
+
+        .text_box {
+            .left_box {
+                &.active {
+                    top: 600px;
+                }
+            }
+
+            .right_box {
+                &.active {
+                    top: 600px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:600px) {
+    .container {
+        .text_box {
+            .left_box {
+                font-size: 12px;
+            }
+        }
+
+        .tab_box {
+            ul {
+                li {
+                    font-size: 10px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:450px) {
+    .container {
+        .tab_box {
+            ul {
+                gap: 5px;
+
+                li {
+                    width: 20%;
+                }
+            }
+        }
+
+        .text_box {
+            .left_box {
+                &.active {
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 100%;
+                    top: 520px;
+                }
+            }
+
+            .right_box {
+                ul {
+                    flex-direction: row;
+                    gap: 10px;
+                }
+
+                &.active {
+                    top: 450px;
+                    right: 50%;
+                    transform: translateX(50%);
+                    width: 100%
+                }
             }
         }
     }

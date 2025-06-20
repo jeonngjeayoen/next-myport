@@ -33,33 +33,67 @@
         z-index: 2;
     }
 
-    .commonBall {
-        width: 0;
-        height: 0;
-        border-radius: 50%;
-        transition: .5s;
-        @include positionCenter;
-        z-index: 999999;
+    .ball_box {
+        position: absolute;
+        width: 100%;
+        height: calc(100% + 200px);
+        overflow: hidden;
+        top: 0;
 
-        &.screen01 {
-            background: #f3f1ff;
+        .commonBall {
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            transition: .5s;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, calc(-50% - 100px));
+            z-index: 999999;
+
+            &.screen01 {
+                background: #f3f1ff;
+            }
+
+            &.screen02 {
+                background: #d9d9d9;
+            }
+
+            &.screen03 {
+                background: #DAE7EC;
+            }
+
+            &.screen04 {
+                background: #DDD3C7;
+            }
+
+            &.active {
+                width: 2000px;
+                height: 2000px;
+            }
         }
+    }
+}
 
-        &.screen02 {
-            background: #d9d9d9;
+@media screen and (max-width:800px) {
+    .team_wrap {
+        .back_illu {
+            .illu {
+                min-width: 1500px;
+            }
         }
+    }
+}
 
-        &.screen03 {
-            background: #DAE7EC;
-        }
+@media screen and (max-width:450px) {
+    .team_wrap {
+        height: auto;
+        overflow: hidden;
+        width: 100vw;
 
-        &.screen04 {
-            background: #DDD3C7;
-        }
-
-        &.active {
-            width: 2000px;
-            height: 2000px;
+        .back_illu {
+            position: static;
+            height: 600px;
         }
     }
 }

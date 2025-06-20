@@ -57,21 +57,21 @@ export default function Team() {
 
             <TinkleBack />
             <Teamback />
-
-            {tabData.map((tab) => (
-                <div
-                    key={tab.title}
-                    ref={(el) => {
-                        ballRefs.current[tab.title] = el;
-                    }}
-                    className={`
+            <div className={styles.ball_box}>
+                {tabData.map((tab) => (
+                    <div
+                        key={tab.title}
+                        ref={(el) => {
+                            ballRefs.current[tab.title] = el;
+                        }}
+                        className={`
                         ${styles.commonBall}
                         ${styles[tab.screenClass]}
                         ${activeBallTitle === tab.title ? styles.active : ""}
                     `}
-                />
-            ))}
-
+                    />
+                ))}
+            </div>
             {modalVisible && (
                 <Modal
                     selectedTitle={currentTab.screenClass}
