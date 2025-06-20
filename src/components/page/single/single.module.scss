@@ -169,6 +169,12 @@
 
 @media screen and (max-width:500px) {
     .single_wrap {
+        height: auto;
+
+        .back_illu {
+            position: static;
+        }
+
         .section01 {
             .rotate_box_common {
                 .rotate_box_wrap02 {
