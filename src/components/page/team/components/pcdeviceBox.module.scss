@@ -136,30 +136,38 @@
         color: $color-white;
 
         &.screen01 {
-            li:hover {
-                border: 1px solid #614cf6;
-                background: #614cf6;
+            .right_box {
+                li:hover {
+                    border: 1px solid #614cf6;
+                    background: #614cf6;
+                }
             }
         }
 
         &.screen02 {
-            li:hover {
-                border: 1px solid #112F69;
-                background: #112F69;
+            .right_box {
+                li:hover {
+                    border: 1px solid #112F69;
+                    background: #112F69;
+                }
             }
         }
 
         &.screen03 {
-            li:hover {
-                border: 1px solid #FCB416;
-                background: #FCB416;
+            .right_box {
+                li:hover {
+                    border: 1px solid #FCB416;
+                    background: #FCB416;
+                }
             }
         }
 
         &.screen04 {
-            li:hover {
-                border: 1px solid #8CC63F;
-                background: #8CC63F;
+            .right_box {
+                li:hover {
+                    border: 1px solid #8CC63F;
+                    background: #8CC63F;
+                }
             }
         }
 
@@ -172,6 +180,7 @@
         .right_box {
             right: 20%;
             transition: .5s;
+            opacity: 0;
 
             ul {
                 @include column-flexbox($jc: center, $ai: center);
@@ -199,12 +208,14 @@
 
             &.active {
                 right: -200px;
+                opacity: 1;
             }
         }
 
         .left_box {
             left: 20%;
             transition: .5s;
+            opacity: 0;
 
             h2 {
                 padding-bottom: 20px;
@@ -216,9 +227,60 @@
 
             &.active {
                 left: -300px;
+                opacity: 1;
             }
 
             text-align: right;
+        }
+    }
+}
+
+@media screen and (max-width:1500px) {
+    .container {
+        .text_box {
+            .left_box {
+                width: 200px;
+                font-size: 14px;
+
+                &.active {
+                    left: -250px;
+                }
+            }
+
+            >div {
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+    }
+}
+
+@media screen and (max-width:1200px) {
+    .container {
+        .text_box {
+            .left_box {
+                font-size: 14px;
+                width: auto;
+                text-align: center;
+
+                &.active {
+                    left: 0;
+                    top: 50vw;
+                }
+            }
+
+            .right_box {
+
+                &.active {
+                    right: 0;
+                    top: 50vw;
+                }
+            }
+
+            >div {
+                top: 50%;
+                transform: translateY(-50%);
+            }
         }
     }
 }
