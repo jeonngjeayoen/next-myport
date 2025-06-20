@@ -3,6 +3,7 @@
 import styles from "./contact.module.scss"
 import UfoBox from "./components/ufoBox.component"
 import ChatBox from "./components/chatBox.component"
+import TinkleBack from "../../semantic/back/tinkleBack.component";
 import { useEffect, useState } from "react"
 
 export default function Contact() {
@@ -33,6 +34,7 @@ export default function Contact() {
             <div className={styles.back_illu}>
                 <div className={`${styles.illu} ${isActive ? styles.active : ""}`} />
             </div>
+            <TinkleBack />
         </main>
     )
 }

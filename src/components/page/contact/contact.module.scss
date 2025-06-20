@@ -35,3 +35,29 @@
         position: relative;
     }
 }
+
+@media screen and (max-width:800px) {
+    .contact_wrap {
+        .back_illu {
+            .illu {
+                min-width: 1200px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:500px) {
+    .contact_wrap {
+        height: auto;
+        position: relative;
+
+        .back_illu {
+            height: 100%;
+            bottom: 0;
+        }
+
+        .sec01 {
+            height: 800px;
+        }
+    }
+}

@@ -17,7 +17,7 @@ export default function Teamback() {
 
         if (!l1 || !l2 || !sum) return;
 
-        // 타이밍 시퀀스 정의
+        // 번개 타이밍 add .on
         const actions: [number, () => void][] = [
             [100, () => l1.classList.add(styles.on)],
             [200, () => l1.classList.remove(styles.on)],

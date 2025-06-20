@@ -14,7 +14,7 @@ export const keywordResponses = [
     },
     {
         keywords: ["연락처", "주소", "깃허브", "git", "전화"],
-        response: "전화번호는 010-9089-7253 이며 email 주소는 jyek121242@gmail.com / 깃허브 주소는 https://github.com/jeonngjeayoen 입니다.🙌",
+        response: "전화번호는 010-9089-7253 이며 email 주소는 jyek121242@gmail.com / 깃허브 주소는 github.com/jeonngjeayoen 입니다.🙌",
     },
     {
         keywords: ["경력", "실무", "경험"],
