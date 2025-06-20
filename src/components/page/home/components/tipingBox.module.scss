@@ -111,3 +111,36 @@
         }
     }
 }
+
+@media screen and (max-width:1520px) {
+    .typing_box {
+        bottom: 40px;
+    }
+}
+
+@media screen and (max-width:800px) {
+    .typing_box {
+        font-size: 16px;
+        width: 300px;
+        height: 155px;
+
+        .typing {
+            line-height: 35px;
+
+            .space {
+                font-size: 25px;
+            }
+
+            .wep {
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:500px) {
+    .typing_box {
+        right: 10px;
+        bottom: 10px;
+    }
+}

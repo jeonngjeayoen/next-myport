@@ -31,8 +31,8 @@ export default function HomeComponent() {
                     </div>
                     <Titlebox />
                 </div>
-            </main >
-            <TipingBox />
+                <TipingBox />
+            </main>
             <div className={styles.back_bg}>
                 <div className={styles.back_bg_box}>
                     <div className={`${styles.won} ${isActive ? styles.active : ''}`}></div>

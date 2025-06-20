@@ -71,3 +71,29 @@ $partSize: 5em;
         }
     }
 }
+
+@media screen and (max-width:1300px) {
+    .rocket_box {
+        &.active {
+            transform: rotate(-90deg) translateY(-2000px);
+        }
+    }
+}
+
+@media screen and (max-width:500px) {
+    .rocket_box {
+        &.active {
+            transform: rotate(-90deg) translateY(-1000px);
+        }
+
+        .rocket {
+            width: 100px;
+            height: 100px;
+        }
+
+        .fire {
+            right: 75%;
+            font-size: 6px;
+        }
+    }
+}

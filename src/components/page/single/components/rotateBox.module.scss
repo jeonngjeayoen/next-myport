@@ -82,3 +82,52 @@
         }
     }
 }
+
+@media screen and (max-width:800px) {
+    .rotate_box_wrap {
+        width: 200px;
+
+        p {
+            font-size: 14px;
+            line-height: 20px;
+        }
+
+        >p {
+            line-height: 10px;
+        }
+    }
+}
+
+@media screen and (max-width:450px) {
+    .rotate_box_wrap {
+        width: 150px;
+        height: 100px;
+
+        p {
+            font-size: 12px;
+            line-height: 20px;
+        }
+
+        >p {
+            line-height: 0px;
+            font-size: 10px;
+
+        }
+
+        .rotate_box {
+            .card_box {
+                outline: 5px solid $color-black;
+            }
+
+            .back {
+                outline: 5px solid $color-white;
+
+                .btn_box {
+                    width: 50px;
+                    line-height: 20px;
+                    font-size: 10px;
+                }
+            }
+        }
+    }
+}

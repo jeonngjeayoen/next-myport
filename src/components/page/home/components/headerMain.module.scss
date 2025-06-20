@@ -140,3 +140,43 @@
 .ball4 {
     background: $contact-color;
 }
+
+@media screen and (max-width:1300px) {
+    .ball {
+        &.ballAnimate03 {
+            width: 2500px;
+            height: 2500px;
+        }
+    }
+}
+
+@media screen and (max-width:800px) {
+    .homeheader {
+        nav {
+            ul {
+                a {
+                    gap: 20px;
+                    font-size: 14px;
+
+                    span {
+                        &.icon {
+                            width: 36px;
+                            height: 36px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .ball {
+        &.ballAnimate02 {
+            left: 10px;
+        }
+
+        &.ballAnimate03 {
+            width: 2000px;
+            height: 2000px;
+        }
+    }
+}

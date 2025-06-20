@@ -97,6 +97,11 @@
     }
 
     .star {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        z-index: 1;
 
         .star_span_star01 {
             left: 10%;
@@ -129,7 +134,7 @@
                 height: 43px;
                 background: url(/images/star.png) center center / contain no-repeat;
                 position: absolute;
-                z-index: 10;
+                z-index: 2;
             }
 
             .star_twinkle {
@@ -158,6 +163,99 @@
                     box-shadow: 0 0 .8vw #fff, 0 0 1.5vw #fff, 0 0 5vw #fff, 0 0 5vw #fff, 0 0 .2vw #fff;
                     color: #fff;
                 }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:1520px) {
+    .inner {
+        .planet_box {
+
+            .real_plate {
+                width: 200px;
+                height: 200px;
+            }
+
+            .half_box {
+                width: 200px;
+                height: 100px;
+
+                .half {
+                    width: 100%;
+                    height: 200px;
+                }
+            }
+        }
+
+        .star {
+            .star_span_star01 {
+                left: 5%;
+                top: 3%;
+            }
+
+            .star_span_star02 {
+                top: 40%;
+            }
+
+            .star_span_star03 {
+                left: 35%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:800px) {
+    .inner {
+        .back_bg {
+
+            .back_bg_box,
+            .back_bg_box02 {
+                width: 30%;
+
+                .won {
+                    &.active {
+                        transform: translate(-50%, -50%) scale(.5);
+                    }
+                }
+            }
+
+            .back_bg_box02 {
+                .won {
+                    &.active {
+                        transform: translate(-50%, -50%) scale(.8);
+                    }
+                }
+            }
+        }
+
+        .star {
+            .star_span_star01 {
+                left: 5%;
+                top: 3%;
+            }
+
+            .star_span_star02 {
+                top: 40%;
+            }
+
+            .star_span_star03 {
+                left: 35%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:500px) {
+    .inner {
+        .star {
+
+            .star_span_star02 {
+                top: 30%;
+            }
+
+            .star_span_star03 {
+                left: 5%;
             }
         }
     }

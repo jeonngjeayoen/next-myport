@@ -165,8 +165,8 @@
 
                 .commonBall {
                     &.ballAnimate01 {
-                        width: 2000px;
-                        height: 2000px;
+                        width: 2500px;
+                        height: 2500px;
                     }
                 }
 
@@ -182,6 +182,21 @@
                     .img_line01,
                     .img_line03 {
                         display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:800px) {
+    .design_box {
+        .design_list {
+            li {
+                .commonBall {
+                    &.ballAnimate01 {
+                        width: 2000px;
+                        height: 2000px;
                     }
                 }
             }
