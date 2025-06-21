@@ -2,15 +2,15 @@ import { useState, useMemo } from "react";
 import styles from "./skillBox.module.scss";
 
 const skills = [
-    { name: "UI/UX", level: 75 },
+    { name: "UI/UX", level: 80 },
     { name: "웹표준/접근성", level: 80 },
     { name: "HTML5", level: 85 },
     { name: "CSS3", level: 100 },
     { name: "SCSS", level: 90 },
-    { name: "JAVASCRIPT", level: 90 },
-    { name: "TYPESCRIPT", level: 85 },
-    { name: "REACT/NEXT.JS", level: 80 },
-    { name: "NODE.JS", level: 75 },
+    { name: "JAVASCRIPT", level: 75 },
+    { name: "TYPESCRIPT", level: 70 },
+    { name: "REACT/NEXT.JS", level: 70 },
+    { name: "NODE.JS", level: 50 },
     { name: "PHP", level: 70 },
     { name: "GIT", level: 85 },
     { name: "불타는 열정", level: 100 },

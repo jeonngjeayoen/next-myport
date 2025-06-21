@@ -96,7 +96,7 @@ $partSize: 5em;
     &:hover {
         li {
             &:first-child .bar {
-                width: 75%;
+                width: 80%;
             }
 
             &:nth-child(2) .bar {
@@ -116,19 +116,19 @@ $partSize: 5em;
             }
 
             &:nth-child(6) .bar {
-                width: 90%;
+                width: 75%;
             }
 
             &:nth-child(7) .bar {
-                width: 85%;
+                width: 70%;
             }
 
             &:nth-child(8) .bar {
-                width: 80%;
+                width: 70%;
             }
 
             &:nth-child(9) .bar {
-                width: 75%;
+                width: 50%;
             }
 
             &:nth-child(10) .bar {
