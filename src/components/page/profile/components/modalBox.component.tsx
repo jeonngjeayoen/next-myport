@@ -29,10 +29,34 @@ export default function ModalBox({ selectedTitle }: ModalBoxProps) {
                                     layout="fill"
                                 />
                             </li>
-                            <li className={styles.img02}></li>
-                            <li className={styles.img03}></li>
-                            <li className={styles.img04}></li>
-                            <li className={styles.img05}></li>
+                            <li className={styles.img02}>
+                                <Image
+                                    src="/images/typescript.png"
+                                    alt="typescript"
+                                    layout="fill"
+                                />
+                            </li>
+                            <li className={styles.img03}>
+                                <Image
+                                    src="/images/nodejs.png"
+                                    alt="nodejs"
+                                    layout="fill"
+                                />
+                            </li>
+                            <li className={styles.img04}>
+                                <Image
+                                    src="/images/nextjs.png"
+                                    alt="nextjs"
+                                    layout="fill"
+                                />
+                            </li>
+                            <li className={styles.img05}>
+                                <Image
+                                    src="/images/vercel.png"
+                                    alt="vercel"
+                                    layout="fill"
+                                />
+                            </li>
                         </ul>
                     </li>
                     <li className={styles.second_figma}></li>
@@ -43,9 +67,27 @@ export default function ModalBox({ selectedTitle }: ModalBoxProps) {
                 <ul className={styles.modal_box02}>
                     <li className={styles.first_photo}>
                         <ul>
-                            <li className={styles.img01}></li>
-                            <li className={styles.img02}></li>
-                            <li className={styles.img03}></li>
+                            <li className={styles.img01}>
+                                <Image
+                                    src="/images/mok01.png"
+                                    alt="mok"
+                                    layout="fill"
+                                />
+                            </li>
+                            <li className={styles.img02}>
+                                <Image
+                                    src="/images/mok02.png"
+                                    alt="mok"
+                                    layout="fill"
+                                />
+                            </li>
+                            <li className={styles.img03}>
+                                <Image
+                                    src="/images/mok03.png"
+                                    alt="mok"
+                                    layout="fill"
+                                />
+                            </li>
                         </ul>
                     </li>
                 </ul>

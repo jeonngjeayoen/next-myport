@@ -43,25 +43,21 @@
                 }
 
                 .img02 {
-                    background: url(/images/typescript.png) center center / contain no-repeat;
                     width: 147px;
                     height: 147px;
                 }
 
                 .img03 {
-                    background: url(/images/nodejs.png) center center / contain no-repeat;
                     width: 253px;
                     height: 155px;
                 }
 
                 .img04 {
-                    background: url(/images/nextjs.png) center center / contain no-repeat;
                     width: 252px;
                     height: 63px;
                 }
 
                 .img05 {
-                    background: url(/images/vercel.png) center center / contain no-repeat;
                     width: 270px;
                     height: 68px;
                 }
@@ -98,18 +94,7 @@
                 li {
                     width: 308px;
                     height: 422px;
-                }
-
-                .img01 {
-                    background: url(/images/mok01.png) center center / contain no-repeat;
-                }
-
-                .img02 {
-                    background: url(/images/mok02.png) center center / contain no-repeat;
-                }
-
-                .img03 {
-                    background: url(/images/mok03.png) center center / contain no-repeat;
+                    position: relative;
                 }
             }
         }
