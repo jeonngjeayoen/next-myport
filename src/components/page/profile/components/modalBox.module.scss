@@ -8,17 +8,8 @@
     z-index: 9999;
     text-align: center;
     transition: .3s;
-    opacity: 0;
     overflow-y: scroll;
     cursor: pointer;
-    padding-top: 50px;
-    will-change: padding-top, opacity;
-    contain: layout paint;
-
-    &.active {
-        opacity: 1;
-        padding-top: 0px;
-    }
 
     >ul {
         padding-top: 200px;
