@@ -1,7 +1,7 @@
 "use client";
 
 import styles from "./team.module.scss";
-import TinkleBack from "../../semantic/back/tinkleBack.component";
+import TinkleBack from "@lib/back/tinkleBack.component";
 import PcBox from "./components/pcdeviceBox.component";
 import MoBox from "./components/mobileBox.component";
 import Teamback from "./components/teamBack.component";

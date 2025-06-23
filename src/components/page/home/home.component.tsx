@@ -3,7 +3,7 @@
 import Header from "./components/headerMain.component";
 import Pathbox from "./components/pathBox.component";
 import Titlebox from "./components/Titlebox.component";
-import TinkleBack from "../../semantic/back/tinkleBack.component";
+import TinkleBack from "@lib/back/tinkleBack.component";
 import TipingBox from "./components/tipingBox.component";
 
 

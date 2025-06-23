@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import styles from "./single.module.scss";
-import TinkleBack from "../../semantic/back/tinkleBack.component";
+import TinkleBack from "@lib/back/tinkleBack.component";
 import Rocket from "./components/rocketBox.component"
 import RotateBox from "./components/rotateBox.component"
 import { useStaggeredActivation } from "./components/hooks/useStaggeredActivation";

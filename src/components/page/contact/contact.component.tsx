@@ -3,7 +3,7 @@
 import styles from "./contact.module.scss"
 import UfoBox from "./components/ufoBox.component"
 import ChatBox from "./components/chatBox.component"
-import TinkleBack from "../../semantic/back/tinkleBack.component";
+import TinkleBack from "@lib/back/tinkleBack.component";
 import { useEffect, useState } from "react"
 
 export default function Contact() {
