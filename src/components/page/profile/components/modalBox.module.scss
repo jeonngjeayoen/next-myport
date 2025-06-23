@@ -12,6 +12,8 @@
     overflow-y: scroll;
     cursor: pointer;
     padding-top: 50px;
+    will-change: padding-top, opacity;
+    contain: layout paint;
 
     &.active {
         opacity: 1;

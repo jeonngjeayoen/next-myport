@@ -68,8 +68,8 @@
             }
 
             &.active {
-                width: 2000px;
-                height: 2000px;
+                width: 170vw;
+                height: 170vw;
             }
         }
     }
@@ -80,6 +80,15 @@
         .back_illu {
             .illu {
                 min-width: 1500px;
+            }
+        }
+
+        .ball_box {
+            .commonBall {
+                &.active {
+                    width: 2000px;
+                    height: 2000px;
+                }
             }
         }
     }
