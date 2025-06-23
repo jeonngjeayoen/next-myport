@@ -31,7 +31,7 @@ export default function Profile() {
                                 <p>운전면허 2종 보통 <span>21.02</span></p>
                             </li>
                             <li className={styles.licen}>
-                                <h3>경력</h3>
+                                <h3>CAREER</h3>
                                 <p>㈜EETECH<span>23.07 ~ 23.09</span></p>
                                 <p>메디픽스㈜<span>23.12 ~ 24.03</span></p>
                                 <p>㈜웰컴뮤니케이션<span>24.03 ~ 25.03</span></p>
