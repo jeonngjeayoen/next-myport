@@ -16,6 +16,18 @@ export const useAnimateOnClass = (
 
         if (!wrapperEl || !targetEl) return;
 
+        const isSmallScreen = window.innerWidth <= 500;
+
+        const initialHasTrigger = wrapperEl.classList.contains(triggerClass) ||
+            Array.from(wrapperEl.classList).some((cls) => cls.includes(triggerClass));
+
+        if (initialHasTrigger) {
+            timerRef.current = setTimeout(() => {
+                targetEl.classList.add(animateClass);
+                if (footerEl && isSmallScreen) footerEl.style.display = "none";
+            }, delay);
+        }
+
         const observer = new MutationObserver((mutations) => {
             for (const mutation of mutations) {
                 if (mutation.type === "attributes" && mutation.attributeName === "class") {
@@ -24,18 +36,16 @@ export const useAnimateOnClass = (
                         cls.includes(triggerClass)
                     );
 
-                    const isSmallScreen = window.innerWidth <= 500;
-
                     if (hasTrigger) {
                         if (timerRef.current) clearTimeout(timerRef.current);
                         timerRef.current = setTimeout(() => {
                             targetEl.classList.add(animateClass);
-                            if (footerEl && isSmallScreen) footerEl.style.display = "none"; // ✅ 해상도 조건 추가
+                            if (footerEl && isSmallScreen) footerEl.style.display = "none";
                         }, delay);
                     } else {
                         if (timerRef.current) clearTimeout(timerRef.current);
                         targetEl.classList.remove(animateClass);
-                        if (footerEl && isSmallScreen) footerEl.style.display = ""; // ✅ 해상도 조건 추가
+                        if (footerEl && isSmallScreen) footerEl.style.display = "";
                     }
                 }
             }
@@ -50,7 +60,7 @@ export const useAnimateOnClass = (
             observer.disconnect();
             if (timerRef.current) clearTimeout(timerRef.current);
             targetEl.classList.remove(animateClass);
-            if (footerEl && window.innerWidth <= 500) footerEl.style.display = ""; // ✅ cleanup에도 조건 추가
+            if (footerEl && isSmallScreen) footerEl.style.display = "";
         };
     }, [wrapperRef, targetRef, triggerClass, animateClass, delay]);
 };
