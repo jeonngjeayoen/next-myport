@@ -21,6 +21,8 @@
             background: url(/images/team_bg.png) center bottom / contain no-repeat;
             transform: translateY(300px);
             transition: .8s;
+            will-change: transform;
+            contain: layout paint;
 
             &.active {
                 transform: translateY(150px);

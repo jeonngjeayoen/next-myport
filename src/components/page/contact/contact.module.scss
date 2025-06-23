@@ -21,6 +21,8 @@
             background: url(/images/nep_bg.png) center bottom / contain no-repeat;
             transform: translateY(250px);
             transition: .8s;
+            will-change: transform;
+            contain: layout paint;
 
             &.active {
                 transform: translateY(100px);
