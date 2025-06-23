@@ -27,65 +27,55 @@
     .modal_box01 {
         background: #BE7CC1;
 
+        li {
+            display: inline-block;
+
+            >div {
+                position: relative;
+            }
+        }
+
         .first_figma {
             ul {
                 @include flexCenter(center);
                 gap: 50px;
 
-                li {
-                    display: inline-block;
-
-                    img {
-                        position: absolute;
-                    }
-                }
-
-                .img01 {
-                    background: url(/images/sass.png) center center / contain no-repeat;
+                .img01_box {
                     width: 181px;
                     height: 136px;
                 }
 
-                .img02 {
-                    background: url(/images/typescript.png) center center / contain no-repeat;
+                .img02_box {
                     width: 147px;
                     height: 147px;
                 }
 
-                .img03 {
-                    background: url(/images/nodejs.png) center center / contain no-repeat;
+                .img03_box {
                     width: 253px;
                     height: 155px;
                 }
 
-                .img04 {
-                    background: url(/images/nextjs.png) center center / contain no-repeat;
+                .img04_box {
                     width: 252px;
                     height: 63px;
                 }
 
-                .img05 {
-                    background: url(/images/vercel.png) center center / contain no-repeat;
+                .img05_box {
                     width: 270px;
                     height: 68px;
                 }
             }
         }
 
-        .second_figma {
-            background: url(/images/user_flow.png) center center / contain no-repeat;
-            max-width: 800px;
-            width: 100%;
-            height: 400px;
-            margin: 0 auto;
+        .second_figma_box {
+            width: 828px;
+            height: 267px;
+            margin: 50px auto;
         }
 
-        .last_figma {
-            background: url(/images/main_figam.jpg) center center / contain no-repeat;
-            max-width: 800px;
-            width: 100%;
-            height: 145vw;
-            max-height: 2600px;
+        .last_figma_box {
+            width: 60vw;
+            height: 197.79vw;
             margin: 0 auto;
             margin-bottom: 200px;
         }
@@ -191,14 +181,19 @@
                 ul {
                     flex-wrap: wrap;
 
-                    li.img01,
-                    li.img02,
-                    li.img03,
-                    li.img04,
-                    li.img05 {
+                    li {
                         width: 100%;
+
+                        >div {
+                            margin: 0 auto;
+                        }
                     }
                 }
+            }
+
+            .second_figma_box {
+                width: 80vw;
+                height: 25.82vw;
             }
         }
 
