@@ -9,7 +9,7 @@ export default function ModalBox({ selectedTitle }: ModalBoxProps) {
     const modalRef = useRef<HTMLDivElement | null>(null);
     const wrapperRef = useRef<HTMLElement | null>(null);
 
-    useAnimateOnClass(wrapperRef, modalRef, "ballAnimate02", styles.active, 50);
+    useAnimateOnClass(wrapperRef, modalRef, "ballAnimate02", styles.active, 100);
 
     return (
         <div ref={(el) => {
