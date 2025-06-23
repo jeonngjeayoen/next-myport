@@ -34,10 +34,10 @@
 
                 li {
                     display: inline-block;
+                    position: relative;
                 }
 
                 .img01 {
-                    background: url(/images/sass.png) center center / contain no-repeat;
                     width: 181px;
                     height: 136px;
                 }

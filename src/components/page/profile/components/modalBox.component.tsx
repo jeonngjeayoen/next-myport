@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import styles from "./modalBox.module.scss";
 import { useAnimateOnClass } from "./hooks/useAnimateOnClass";
+import Image from 'next/image';
 interface ModalBoxProps {
     selectedTitle: string | null;
 }
@@ -21,7 +22,13 @@ export default function ModalBox({ selectedTitle }: ModalBoxProps) {
                 <ul className={styles.modal_box01}>
                     <li className={styles.first_figma}>
                         <ul>
-                            <li className={styles.img01}></li>
+                            <li className={styles.img01}>
+                                <Image
+                                    src="/images/sass.png"
+                                    alt="sass"
+                                    layout="fill"
+                                />
+                            </li>
                             <li className={styles.img02}></li>
                             <li className={styles.img03}></li>
                             <li className={styles.img04}></li>
