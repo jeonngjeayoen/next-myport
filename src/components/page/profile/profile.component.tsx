@@ -24,9 +24,19 @@ export default function Profile() {
                         <span className={styles.photo}></span>
                     </li>
                     <li className={styles.licen}>
-                        <h3>LISENCE</h3>
-                        <p>GTQ 1급 <span>22.07</span></p>
-                        <p>운전면허 2종 보통 <span>21.02</span></p>
+                        <ul className={styles.list_ul}>
+                            <li className={styles.licen}>
+                                <h3>LISENCE</h3>
+                                <p>GTQ 1급 <span>22.07</span></p>
+                                <p>운전면허 2종 보통 <span>21.02</span></p>
+                            </li>
+                            <li className={styles.licen}>
+                                <h3>경력</h3>
+                                <p>㈜EETECH<span>23.07 ~ 23.09</span></p>
+                                <p>메디픽스㈜<span>23.12 ~ 24.03</span></p>
+                                <p>㈜웰컴뮤니케이션<span>24.03 ~ 25.03</span></p>
+                            </li>
+                        </ul>
                     </li>
                     <li className={styles.licen02}>
                         <h3>EDUCATON</h3>
