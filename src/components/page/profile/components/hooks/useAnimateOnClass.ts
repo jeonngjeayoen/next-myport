@@ -4,7 +4,8 @@ export const useAnimateOnClass = (
     wrapperRef: React.RefObject<HTMLElement | null>,
     targetRef: React.RefObject<HTMLElement | null>,
     triggerClass: string,
-    delay: number = 0
+    animateClass: string,
+    delay: number
 ) => {
     const timerRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -23,6 +24,7 @@ export const useAnimateOnClass = (
         if (initialHasTrigger) {
             timerRef.current = setTimeout(() => {
                 if (footerEl && isSmallScreen) footerEl.style.display = "none";
+                targetEl.classList.add(animateClass);
             }, delay);
         }
 
@@ -38,10 +40,12 @@ export const useAnimateOnClass = (
                         if (timerRef.current) clearTimeout(timerRef.current);
                         timerRef.current = setTimeout(() => {
                             if (footerEl && isSmallScreen) footerEl.style.display = "none";
+                            targetEl.classList.add(animateClass);
                         }, delay);
                     } else {
                         if (timerRef.current) clearTimeout(timerRef.current);
                         if (footerEl && isSmallScreen) footerEl.style.display = "";
+                        targetEl.classList.remove(animateClass);
                     }
                 }
             }
@@ -56,6 +60,7 @@ export const useAnimateOnClass = (
             observer.disconnect();
             if (timerRef.current) clearTimeout(timerRef.current);
             if (footerEl && isSmallScreen) footerEl.style.display = "";
+            targetEl.classList.remove(animateClass);
         };
-    }, [wrapperRef, targetRef, triggerClass, delay]);
+    }, [wrapperRef, targetRef, triggerClass, animateClass, delay]);
 };
