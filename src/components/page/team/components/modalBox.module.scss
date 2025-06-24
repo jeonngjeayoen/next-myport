@@ -12,11 +12,6 @@
     overflow-y: scroll;
     cursor: pointer;
 
-    &.active {
-        opacity: 1;
-        padding-top: 150px;
-    }
-
     ul {
         padding-top: 100px;
         padding-bottom: 100px;
