@@ -77,20 +77,14 @@
     }
 }
 
-@media screen and (max-width:1000px) {
-    .team_wrap {
-        overflow: hidden;
-    }
-}
-
 @media screen and (max-width:800px) {
     .team_wrap {
+        overflow: hidden;
+
         .back_illu {
             .illu {
                 min-width: 1500px;
                 min-height: 800px;
-                position: static;
-                height: 600px;
             }
         }
 
@@ -111,6 +105,8 @@
         width: 100vw;
 
         .back_illu {
+            position: static;
+            height: 600px;
 
             .illu {
                 transform: translateY(150px);
