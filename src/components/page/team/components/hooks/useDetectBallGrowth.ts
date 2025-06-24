@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 
 export const useDetectBallGrowth = (
     activeBallTitle: string | null,
@@ -6,40 +6,32 @@ export const useDetectBallGrowth = (
     onFullyGrown: () => void,
     activeClass: string = "active"
 ) => {
-    const hasFiredRef = useRef(false);
     useEffect(() => {
         if (!activeBallTitle) return;
 
         const ball = getBallElementByTitle(activeBallTitle);
-        if (!ball) return;
+        if (!ball || !ball.classList.contains(activeClass)) return;
 
-        const observer = new ResizeObserver(([entry]) => {
-            const { width, height } = entry.contentRect;
+        const mainEl = document.querySelector("main");
 
-            if (
-                ball.classList.contains(activeClass) &&
-                !hasFiredRef.current
-            ) {
-                hasFiredRef.current = true;
-                document.body.style.overflow = "hidden";
-                const mainEl = document.querySelector("main");
-                if (mainEl) {
-                    mainEl.style.overflow = "hidden";
-                }
-                onFullyGrown();
-            }
-        });
+        const handleTransitionEnd = (e: TransitionEvent) => {
+            if (!["width", "height", "transform"].includes(e.propertyName)) return;
 
-        observer.observe(ball);
+            // body 스크롤 막기
+            document.body.style.overflow = "hidden";
+            if (mainEl) mainEl.style.overflow = "hidden";
+
+            onFullyGrown();
+
+            ball.removeEventListener("transitionend", handleTransitionEnd);
+        };
+
+        ball.addEventListener("transitionend", handleTransitionEnd);
 
         return () => {
-            observer.disconnect();
-            hasFiredRef.current = false;
-            const mainEl = document.querySelector("main");
+            ball.removeEventListener("transitionend", handleTransitionEnd);
             document.body.style.overflow = "";
-            if (mainEl) {
-                mainEl.style.overflow = "";
-            }
+            if (mainEl) mainEl.style.overflow = "";
         };
     }, [activeBallTitle, getBallElementByTitle, onFullyGrown, activeClass]);
 };
