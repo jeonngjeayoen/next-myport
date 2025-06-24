@@ -13,7 +13,7 @@ export const tabData = [
             "역할 : 디자인 / 프론트엔드 개발",
             "제작기간 : 1.5개월",
         ],
-        links: [{ label: "신규 사이트", url: "https://www.threed.site/" }],
+        links: [{ label: "바로가기", url: "https://www.threed.site/" }],
     },
     {
         label: "LMS",
