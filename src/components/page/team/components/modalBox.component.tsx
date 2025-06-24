@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import styles from "./modalBox.module.scss";
+import Image from "next/image";
 
 interface ModalBoxProps {
     selectedTitle: string | null;
@@ -27,7 +28,13 @@ export default function ModalBox({ selectedTitle, onClose }: ModalBoxProps) {
 
             {selectedTitle === "screen01" && (
                 <ul className={styles.modal_box01}>
-                    <li className={styles.screen01}></li>
+                    <li className={styles.screen01}>
+                        <Image
+                            src="/images/threed_all.png"
+                            alt="threed_all"
+                            fill
+                        />
+                    </li>
                 </ul>
             )}
 
