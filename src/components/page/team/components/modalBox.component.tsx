@@ -33,6 +33,7 @@ export default function ModalBox({ selectedTitle, onClose }: ModalBoxProps) {
                             src="/images/threed_all.png"
                             alt="threed_all"
                             fill
+                            priority
                         />
                     </li>
                 </ul>
@@ -45,6 +46,7 @@ export default function ModalBox({ selectedTitle, onClose }: ModalBoxProps) {
                             src="/images/lms_all.png"
                             alt="lms_all"
                             fill
+                            priority
                         />
                     </li>
                 </ul>
@@ -57,6 +59,7 @@ export default function ModalBox({ selectedTitle, onClose }: ModalBoxProps) {
                             src="/images/emart_all.png"
                             alt="emart_all"
                             fill
+                            priority
                         />
                     </li>
                 </ul>
@@ -69,6 +72,7 @@ export default function ModalBox({ selectedTitle, onClose }: ModalBoxProps) {
                             src="/images/sidmaool_all.png"
                             alt="sidmaool_all"
                             fill
+                            priority
                         />
                     </li>
                 </ul>
