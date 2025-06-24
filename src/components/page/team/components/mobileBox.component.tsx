@@ -11,7 +11,7 @@ export default function MobileBox({ index }) {
         isActive02,
         screenRef,
         handleTabChange,
-    } = useTransitionStage(3); //고정 index로 생성
+    } = useTransitionStage(0);
 
     useEffect(() => {
         if (index !== selectedIndex) {

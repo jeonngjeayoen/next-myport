@@ -11,7 +11,7 @@ import { useEffect, useState, useRef } from "react";
 import { useDetectBallGrowth } from "./components/hooks/useDetectBallGrowth";
 
 export default function Team() {
-    const [index, setIndex] = useState(3);
+    const [index, setIndex] = useState(0);
     const [isActive, setIsActive] = useState(false);
     const [activeBallTitle, setActiveBallTitle] = useState<string | null>(null);
     const [modalVisible, setModalVisible] = useState(false);
