@@ -4,34 +4,41 @@ export const useDetectBallGrowth = (
     activeBallTitle: string | null,
     getBallElementByTitle: (title: string) => HTMLDivElement | null,
     onFullyGrown: () => void,
-    activeClass: string = "active"
+    activeClass: string = "active",
+    targetSize: number = 2000
 ) => {
     useEffect(() => {
         if (!activeBallTitle) return;
 
         const ball = getBallElementByTitle(activeBallTitle);
-        if (!ball || !ball.classList.contains(activeClass)) return;
+        if (!ball) return;
 
-        const mainEl = document.querySelector("main");
+        const observer = new ResizeObserver(([entry]) => {
+            const { width, height } = entry.contentRect;
+            if (
+                ball.classList.contains(activeClass) &&
+                width >= targetSize &&
+                height >= targetSize
+            ) {
+                document.body.style.overflow = "hidden";
+                const mainEl = document.querySelector("main");
+                if (mainEl) {
+                    mainEl.style.overflow = "hidden";
+                }
+                onFullyGrown();
+            }
+        });
 
-        const handleTransitionEnd = (e: TransitionEvent) => {
-            if (!["width", "height", "transform"].includes(e.propertyName)) return;
-
-            // body 스크롤 막기
-            document.body.style.overflow = "hidden";
-            if (mainEl) mainEl.style.overflow = "hidden";
-
-            onFullyGrown();
-
-            ball.removeEventListener("transitionend", handleTransitionEnd);
-        };
-
-        ball.addEventListener("transitionend", handleTransitionEnd);
+        observer.observe(ball);
 
         return () => {
-            ball.removeEventListener("transitionend", handleTransitionEnd);
+            observer.disconnect();
+            const mainEl = document.querySelector("main");
             document.body.style.overflow = "";
-            if (mainEl) mainEl.style.overflow = "";
+            if (mainEl) {
+                mainEl.style.overflow = "";
+            }
         };
-    }, [activeBallTitle, getBallElementByTitle, onFullyGrown, activeClass]);
+    }, [activeBallTitle, getBallElementByTitle, onFullyGrown, activeClass, targetSize]);
 };
+

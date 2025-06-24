@@ -33,7 +33,9 @@ export default function ModalBox({ selectedTitle, onClose }: ModalBoxProps) {
                             src="/images/threed_all.png"
                             alt="threed_all"
                             fill
+                            style={{ objectFit: "cover" }}
                             priority
+                            loading="eager"
                         />
                     </li>
                 </ul>
@@ -46,7 +48,9 @@ export default function ModalBox({ selectedTitle, onClose }: ModalBoxProps) {
                             src="/images/lms_all.png"
                             alt="lms_all"
                             fill
+                            style={{ objectFit: "cover" }}
                             priority
+                            loading="eager"
                         />
                     </li>
                 </ul>
@@ -59,7 +63,9 @@ export default function ModalBox({ selectedTitle, onClose }: ModalBoxProps) {
                             src="/images/emart_all.png"
                             alt="emart_all"
                             fill
+                            style={{ objectFit: "cover" }}
                             priority
+                            loading="eager"
                         />
                     </li>
                 </ul>
@@ -72,7 +78,9 @@ export default function ModalBox({ selectedTitle, onClose }: ModalBoxProps) {
                             src="/images/sidmaool_all.png"
                             alt="sidmaool_all"
                             fill
+                            style={{ objectFit: "cover" }}
                             priority
+                            loading="eager"
                         />
                     </li>
                 </ul>
