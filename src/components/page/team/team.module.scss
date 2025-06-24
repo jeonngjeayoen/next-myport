@@ -106,6 +106,14 @@
         .back_illu {
             position: static;
             height: 600px;
+
+            .illu {
+                transform: translateY(150px);
+
+                &.active {
+                    transform: translateY(0px);
+                }
+            }
         }
     }
 }
