@@ -1,12 +1,12 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 export const useDetectBallGrowth = (
     activeBallTitle: string | null,
     getBallElementByTitle: (title: string) => HTMLDivElement | null,
     onFullyGrown: () => void,
-    activeClass: string = "active",
-    targetSize: number = 2000
+    activeClass: string = "active"
 ) => {
+    const hasFiredRef = useRef(false);
     useEffect(() => {
         if (!activeBallTitle) return;
 
@@ -15,11 +15,12 @@ export const useDetectBallGrowth = (
 
         const observer = new ResizeObserver(([entry]) => {
             const { width, height } = entry.contentRect;
+
             if (
                 ball.classList.contains(activeClass) &&
-                width >= targetSize &&
-                height >= targetSize
+                !hasFiredRef.current
             ) {
+                hasFiredRef.current = true;
                 document.body.style.overflow = "hidden";
                 const mainEl = document.querySelector("main");
                 if (mainEl) {
@@ -33,12 +34,12 @@ export const useDetectBallGrowth = (
 
         return () => {
             observer.disconnect();
+            hasFiredRef.current = false;
             const mainEl = document.querySelector("main");
             document.body.style.overflow = "";
             if (mainEl) {
                 mainEl.style.overflow = "";
             }
         };
-    }, [activeBallTitle, getBallElementByTitle, onFullyGrown, activeClass, targetSize]);
+    }, [activeBallTitle, getBallElementByTitle, onFullyGrown, activeClass]);
 };
-
