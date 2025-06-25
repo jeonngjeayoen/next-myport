@@ -25,10 +25,10 @@
                 animation: photo .6s linear 1s infinite alternate;
 
                 .photo {
-                    background: url(/images/profile.png) center center / contain no-repeat;
+                    background: url(/images/profile.png) center bottom / cover no-repeat;
                     width: 380px;
                     height: 380px;
-                    display: inline-block;
+                    display: block;
                 }
             }
 
