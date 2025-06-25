@@ -77,6 +77,19 @@
     }
 }
 
+@media screen and (max-width:1800px) {
+    .team_wrap {
+        .ball_box {
+            .commonBall {
+                &.active {
+                    width: 2500px;
+                    height: 2500px;
+                }
+            }
+        }
+    }
+}
+
 @media screen and (max-width:800px) {
     .team_wrap {
         overflow: hidden;
@@ -85,15 +98,6 @@
             .illu {
                 min-width: 1500px;
                 min-height: 800px;
-            }
-        }
-
-        .ball_box {
-            .commonBall {
-                &.active {
-                    width: 2000px;
-                    height: 2000px;
-                }
             }
         }
     }
