@@ -1,4 +1,5 @@
 @use '@styles/common' as *;
+@use '@styles/base/_typography';
 
 .inner {
     background: linear-gradient(180deg, rgba(54, 27, 117, 1) 0%, rgba(83, 47, 146, 1) 100%);

@@ -57,6 +57,7 @@ export default function Chatbox({ externalInput, submitTrigger, clearExternalInp
                         type="text"
                         placeholder="질문을 입력해주세요"
                         value={input}
+                        id="chat_input"
                         onChange={(e) => setInput(e.target.value)}
                     />
                     <button type="submit">보내기</button>
