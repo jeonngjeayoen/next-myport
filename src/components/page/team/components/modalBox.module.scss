@@ -37,7 +37,12 @@
     .modal_box02 {
         background: #d9d9d9;
 
-        li {
+        li.screen01 {
+            background: url(/images/lms_all01.webp) center center / contain no-repeat;
+            width: 65vw;
+            height: 255.93vw;
+        }
+        li.screen02 {
             background: url(/images/lms_all.png) center center / contain no-repeat;
             width: 65vw;
             height: 2411.87vw;

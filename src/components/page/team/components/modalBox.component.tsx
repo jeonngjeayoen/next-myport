@@ -34,6 +34,8 @@ export default function ModalBox({ selectedTitle, onClose }: ModalBoxProps) {
 
             {selectedTitle === "screen02" && (
                 <ul className={styles.modal_box02}>
+                    <li className={styles.screen01}>
+                    </li>
                     <li className={styles.screen02}>
                     </li>
                 </ul>
