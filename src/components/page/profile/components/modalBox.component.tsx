@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import styles from "./modalBox.module.scss";
 import { useAnimateOnClass } from "./hooks/useAnimateOnClass";
 interface ModalBoxProps {
@@ -10,6 +10,15 @@ export default function ModalBox({ selectedTitle }: ModalBoxProps) {
     const wrapperRef = useRef<HTMLElement | null>(null);
 
     useAnimateOnClass(wrapperRef, modalRef, "ballAnimate02", styles.active, 100);
+
+    useEffect(() => {
+        const targetEl = modalRef.current;
+        if (targetEl) {
+            targetEl.classList.remove(styles.active); // 클래스 초기화
+        }
+    }, [selectedTitle]);
+
+    if (!selectedTitle) return null;
 
     return (
         <div ref={(el) => {
