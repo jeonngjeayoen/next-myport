@@ -40,20 +40,27 @@ export default function ModalBox({ selectedTitle, onClose }: ModalBoxProps) {
                     <li className={styles.screen04}></li>
                     <li className={styles.screen05}></li>
                     <li className={styles.screen06}></li>
+                    <li className={styles.screen07}></li>
                 </ul>
             )}
 
             {selectedTitle === "screen03" && (
                 <ul className={styles.modal_box03}>
-                    <li className={styles.screen03}>
-                    </li>
+                    <li className={styles.screen01}></li>
+                    <li className={styles.screen02}></li>
+                    <li className={styles.screen03}></li>
+                    <li className={styles.screen04}></li>
                 </ul>
             )}
 
             {selectedTitle === "screen04" && (
                 <ul className={styles.modal_box04}>
-                    <li className={styles.screen04}>
-                    </li>
+                    <li className={styles.screen01}></li>
+                    <li className={styles.screen02}></li>
+                    <li className={styles.screen03}></li>
+                    <li className={styles.screen04}></li>
+                    <li className={styles.screen05}></li>
+                    <li className={styles.screen06}></li>
                 </ul>
             )}
         </div>

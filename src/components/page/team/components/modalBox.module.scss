@@ -36,56 +36,85 @@
 
     .modal_box02 {
         background: #d9d9d9;
-
+        li{
+            width: 65vw;
+        }
         li.screen01 {
             background: url(/images/lms_all01.webp) center center / contain no-repeat;
-            width: 65vw;
             height: 255.93vw;
         }
         li.screen02 {
             background: url(/images/lms_all02.webp) center center / contain no-repeat;
-            width: 65vw;
             height: 438.75vw;
         }
         li.screen03 {
             background: url(/images/lms_all03.webp) center center / contain no-repeat;
-            width: 65vw;
             height: 438.75vw;
         }
         li.screen04 {
             background: url(/images/lms_all04.webp) center center / contain no-repeat;
-            width: 65vw;
             height: 438.75vw;
         }
         li.screen05 {
             background: url(/images/lms_all05.webp) center center / contain no-repeat;
-            width: 65vw;
             height: 292.5vw;;
         }
         li.screen06 {
             background: url(/images/lms_all06.webp) center center / contain no-repeat;
-            width: 65vw;
             height: 365.625vw;
+        }
+        li.screen07 {
+            background: url(/images/lms_all07.webp) center center / contain no-repeat;
+            height: 182.81vw;
         }
     }
 
     .modal_box03 {
         background: #DAE7EC;
-
-        li {
-            background: url(/images/emart_all.png) center center / contain no-repeat;
+        li{
             width: 65vw;
-            height: 1973.88vw;
+            height: 511.87vw;
+        }
+        li.screen01 {
+            background: url(/images/emart_all01.webp) center center / contain no-repeat;
+        }
+        li.screen02 {
+            background: url(/images/emart_all02.webp) center center / contain no-repeat;
+        }
+        li.screen03 {
+            background: url(/images/emart_all03.webp) center center / contain no-repeat;
+        }
+        li.screen04 {
+            background: url(/images/emart_all04.webp) center center / contain no-repeat;
+            height: 438.75vw;
         }
     }
 
     .modal_box04 {
         background: #DDD3C7;
-
-        li {
-            background: url(/images/sidmaool_all.png) center center / contain no-repeat;
-            height: 2448.21vw;
+        li{
             width: 65vw;
+            height: 365.39vw;
+        }
+        li.screen01 {
+            background: url(/images/sidmaool_all01.webp) center center / contain no-repeat;
+        }
+        li.screen02 {
+            background: url(/images/sidmaool_all02.webp) center center / contain no-repeat;
+            height:292.42vw;
+        }
+        li.screen03 {
+            background: url(/images/sidmaool_all03.webp) center center / contain no-repeat;
+        }
+        li.screen04 {
+            background: url(/images/sidmaool_all04.webp) center center / contain no-repeat;
+        }
+        li.screen05 {
+            background: url(/images/sidmaool_all05.webp) center center / contain no-repeat;
+        }
+        li.screen06 {
+            background: url(/images/sidmaool_all06.webp) center center / contain no-repeat;
+            height:328.83vw;
         }
     }
 }
