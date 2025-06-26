@@ -5,7 +5,7 @@ export const useDetectBallGrowth = (
     getBallElementByTitle: (title: string) => HTMLDivElement | null,
     onFullyGrown: () => void,
     activeClass: string = "active",
-    targetSize: number = 1500
+    targetSize: number = 1800
 ) => {
     useEffect(() => {
         if (!activeBallTitle) return;
