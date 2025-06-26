@@ -13,7 +13,6 @@
     cursor: pointer;
     padding-top: 50px;
     will-change: padding-top, opacity;
-    contain: layout paint;
 
     &.active {
         opacity: 1;
@@ -31,6 +30,10 @@
             ul {
                 @include flexCenter(center);
                 gap: 50px;
+
+                li {
+                    contain: layout paint;
+                }
 
                 .img01 {
                     background: url(/images/sass.png) center center / contain no-repeat;
@@ -94,6 +97,7 @@
                 li {
                     width: 308px;
                     height: 422px;
+                    contain: layout paint;
                 }
 
                 .img01 {
@@ -122,6 +126,7 @@
                 li {
                     width: 308px;
                     height: 600px;
+                    contain: layout paint;
                 }
 
                 .img01 {
@@ -149,6 +154,7 @@
             height: 200vw;
             display: inline-block;
             margin-bottom: 200px;
+            contain: layout paint;
         }
     }
 }
