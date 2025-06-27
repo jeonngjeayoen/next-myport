@@ -23,7 +23,7 @@ export default function RotateBox({ title, subtitle, detail, link, linkLabel = "
                     ))}
                     <div className={styles.btn_box}>
                         <ul>
-                            <li><Link href={link}>{linkLabel}</Link></li>
+                            <li><Link href={link} target="_bank">{linkLabel}</Link></li>
                         </ul>
                     </div>
                 </div>

@@ -64,7 +64,7 @@ export default function PcBox({ index, onTabChange, onScreenClick }: PcBoxProps)
                     <ul>{currentTab.description.map((text, i) => <li key={i}>{text}</li>)}</ul>
                 </div>
                 <div className={`${styles.right_box} ${isActive ? styles.active : ""}`}>
-                    <ul>{currentTab.links.map((link, i) => <li key={i}><Link href={link.url}>{link.label}</Link></li>)}</ul>
+                    <ul>{currentTab.links.map((link, i) => <li key={i}><Link href={link.url} target="_bank">{link.label}</Link></li>)}</ul>
                 </div>
             </div>
         </div>
