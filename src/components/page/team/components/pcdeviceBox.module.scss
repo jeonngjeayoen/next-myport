@@ -267,14 +267,14 @@
 
                 &.active {
                     left: 0;
-                    top: 50vw;
+                    top: 600px;
                 }
             }
 
             .right_box {
                 &.active {
                     right: 0;
-                    top: 50vw;
+                    top: 600px;
                 }
             }
 
@@ -304,20 +304,6 @@
                 }
 
                 justify-content: center;
-            }
-        }
-
-        .text_box {
-            .left_box {
-                &.active {
-                    top: 600px;
-                }
-            }
-
-            .right_box {
-                &.active {
-                    top: 600px;
-                }
             }
         }
     }
