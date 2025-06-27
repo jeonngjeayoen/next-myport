@@ -7,7 +7,7 @@ const skills = [
     { name: "HTML5", level: 85 },
     { name: "CSS3", level: 100 },
     { name: "SCSS", level: 90 },
-    { name: "JAVASCRIPT", level: 75 },
+    { name: "JAVASCRIPT/jQuery", level: 85 },
     { name: "TYPESCRIPT", level: 70 },
     { name: "REACT/NEXT.JS", level: 70 },
     { name: "NODE.JS", level: 50 },
