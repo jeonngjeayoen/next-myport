@@ -341,6 +341,28 @@
             }
         }
 
+        .pc_box {
+            .img_box {
+                .screen {
+                    &.screen01 {
+                        background: url(/images/m_threed.png) center top / cover no-repeat;
+                    }
+
+                    &.screen02 {
+                        background: url(/images/m_myungzi.jpg) center top / cover no-repeat;
+                    }
+
+                    &.screen03 {
+                        background: url(/images/m_emart.jpg) center top / cover no-repeat;
+                    }
+
+                    &.screen04 {
+                        background: url(/images/m_sidmool.jpg) center top / cover no-repeat;
+                    }
+                }
+            }
+        }
+
         .text_box {
             .left_box {
                 &.active {
